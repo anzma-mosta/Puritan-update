@@ -191,32 +191,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Wishlist
-    document.querySelectorAll('button:has(.fa-heart), .woosw-btn').forEach(btn => {
+    document.querySelectorAll('button:has(.fa-heart)').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const icon = btn.querySelector('i');
-            const title = btn.getAttribute('data-product_name') || 'المنتج';
+            const isLiked = icon.classList.contains('fas');
             
-            if (icon && icon.classList.contains('fas')) {
+            if (isLiked) {
                 icon.classList.replace('fas', 'far');
                 icon.classList.remove('text-red-500');
-                notify('تمت الإزالة', `تم إزالة "${title}" من قائمة المفضلة.`, 'info');
+                notify('تمت الإزالة', 'تم إزالة المنتج من قائمة المفضلة.', 'info');
             } else {
-                if (icon) {
-                    icon.classList.replace('far', 'fas');
-                    icon.classList.add('text-red-500');
-                }
-                notify('تمت الإضافة', `تم إضافة "${title}" إلى قائمة المفضلة بنجاح.`);
+                icon.classList.replace('far', 'fas');
+                icon.classList.add('text-red-500');
+                notify('تمت الإضافة', 'تم إضافة المنتج إلى قائمة المفضلة بنجاح.');
             }
         });
     });
 
     // Quick View
-    document.querySelectorAll('button:has(.fa-eye), .woosq-btn').forEach(btn => {
+    document.querySelectorAll('button:has(.fa-eye)').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const title = btn.getAttribute('data-product_name') || 'المنتج';
-            const img = btn.getAttribute('data-product_image') || btn.closest('.product-card')?.querySelector('img')?.src;
+            const card = btn.closest('.product-card');
+            const title = card?.querySelector('h3')?.innerText || 'المنتج';
+            const img = card?.querySelector('img')?.src;
             
             // Update quick view modal content (sample)
             const modal = document.getElementById('quick-view-modal');
@@ -224,38 +223,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const modalTitle = modal.querySelector('h3');
                 const modalImg = modal.querySelector('img');
                 if (modalTitle) modalTitle.innerText = title;
-                if (modalImg && img) modalImg.src = img;
-                toggleModal('quick-view-modal', true);
-            } else {
-                // Fallback if no modal exists
-                Swal.fire({
-                    title: title,
-                    imageUrl: img,
-                    imageAlt: title,
-                    confirmButtonText: 'إغلاق',
-                    confirmButtonColor: '#ff69b4',
-                    customClass: {
-                        popup: 'rounded-[2rem] p-6',
-                        title: 'playfair font-bold'
-                    }
-                });
+                if (modalImg) modalImg.src = img;
             }
+            
+            toggleModal('quick-view-modal', true);
         });
     });
 
     // Search Action
-    const searchForms = document.querySelectorAll('form.search-form, form.woocommerce-product-search');
-    searchForms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const query = form.querySelector('input[type="search"], input[name="s"]')?.value;
-            if (query) {
-                toggleModal('search-modal', false);
-                notify('جاري البحث', `نتائج البحث عن: "${query}"`, 'info');
-            }
-        });
-    });
-
     const searchInput = document.querySelector('#search-modal input');
     if (searchInput) {
         searchInput.addEventListener('keypress', (e) => {
@@ -295,72 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Compare
-    document.querySelectorAll('.woosc-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const title = btn.getAttribute('data-product_name') || 'المنتج';
-            notify('تمت الإضافة للمقارنة', `تم إضافة "${title}" لقائمة المقارنة.`);
-        });
-    });
-
-    // Account / Login
-    safeAddListener('.header-account-button, .woocommerce-form-login button', 'click', (e) => {
-        e.preventDefault();
-        Swal.fire({
-            title: 'تسجيل الدخول',
-            text: 'هذه الخاصية ستكون متاحة قريباً في النسخة الكاملة.',
-            icon: 'info',
-            confirmButtonText: 'موافق',
-            confirmButtonColor: '#ff69b4',
-            customClass: {
-                popup: 'rounded-[2rem] p-6',
-                title: 'playfair font-bold',
-                confirmButton: 'rounded-full px-6'
-            }
-        });
-    });
-
-    // Contact Form
-    safeAddListener('.wpcf7-form', 'submit', (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const name = form.querySelector('input[name="your-name"]')?.value || '';
-        
-        Swal.fire({
-            title: 'تم إرسال رسالتك!',
-            text: `شكراً لك ${name}، سنتواصل معك في أقرب وقت ممكن.`,
-            icon: 'success',
-            confirmButtonText: 'موافق',
-            confirmButtonColor: '#ff69b4',
-            customClass: {
-                popup: 'rounded-[2rem] p-6',
-                title: 'playfair font-bold',
-                confirmButton: 'rounded-full px-6'
-            }
-        });
-        form.reset();
-    });
-
-    // Checkout Links
-    document.querySelectorAll('a[href*="checkout"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            Swal.fire({
-                title: 'إتمام الطلب',
-                text: 'سيتم تفعيل صفحة الدفع قريباً. شكراً لتفهمك!',
-                icon: 'info',
-                confirmButtonText: 'موافق',
-                confirmButtonColor: '#ff69b4',
-                customClass: {
-                    popup: 'rounded-[2rem] p-6',
-                    title: 'playfair font-bold',
-                    confirmButton: 'rounded-full px-6'
-                }
-            });
-        });
-    });
 
     // General "Soon" for empty links
     document.querySelectorAll('a[href="#"]').forEach(link => {
