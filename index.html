@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puritane - Premium Health & Beauty</title>
+    <title>بيوريتان - منتجات الصحة والجمال الفاخرة</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2b57a2;
@@ -29,7 +32,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--gray);
             background-color: var(--white);
             line-height: 1.6;
@@ -114,12 +117,20 @@
         }
 
         .logo {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--accent);
-            font-family: 'Playfair Display', serif;
-            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
             text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         .search-bar {
@@ -294,6 +305,7 @@
             gap: 30px;
             margin-left: 40px;
             font-weight: 600;
+            padding: 0 10px;
             font-size: 15px;
         }
 
@@ -482,6 +494,27 @@
             margin: 30px 0 15px;
             font-size: 18px;
             color: var(--primary);
+        }
+
+        /* Splide RTL Fixes */
+        .splide {
+            direction: ltr; /* Keep track LTR for internal calculation */
+        }
+
+        .splide__track {
+            direction: ltr;
+        }
+
+        .splide__list {
+            display: flex !important;
+        }
+
+        [dir="rtl"] .splide {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .splide__track {
+            direction: rtl;
         }
 
         /* Hero Section */
@@ -735,7 +768,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100%;
+            height: 180px;
             overflow: hidden;
             margin-bottom: 10px;
         }
@@ -814,12 +847,12 @@
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             opacity: 1;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
 
         .splide__arrow svg {
-            fill: #fdfeff;
+            fill: #1b11a856;
             width: 20px;
             height: 20px;
         }
@@ -1196,6 +1229,15 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .mobile-menu-header .logo img {
+            height: 35px;
+        }
+
+        .mobile-menu-header h2 {
+            font-size: 18px;
+            color: var(--dark);
+        }
+
         .mobile-menu-header h2 {
             font-size: 18px;
             color: var(--primary);
@@ -1494,12 +1536,23 @@
         }
 
         .footer-logo {
-            color: var(--white);
-            font-size: 32px;
-            font-weight: 700;
             margin-bottom: 25px;
-            display: block;
-            font-family: 'Playfair Display', serif;
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer-logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
         }
 
         .footer-about {
@@ -1782,7 +1835,7 @@
 
         .section-header h2 {
             font-size: 28px;
-            font-family: 'Playfair Display', serif;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
         }
 
         .view-all {
@@ -1836,6 +1889,10 @@
         }
 
         @media (max-width: 640px) {
+            .logo img {
+                height: 40px;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -1860,6 +1917,19 @@
             .modern-banner-content h2 {
                 font-size: 22px;
             }
+            .tabs-wrapper {
+                position: absolute !important;
+                gap: 10px;
+                top: 40px !important;
+            }
+
+            .tab-btn {
+                font-size: 11px;
+            }
+
+            .tabs-container {
+                position: relative;
+            }
         }
 
         /* Modern Footer Styles */
@@ -1867,7 +1937,7 @@
             background-color: #000;
             color: #fff;
             padding: 80px 0 30px;
-            font-family: 'Playfair Display', serif;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
         }
 
         .footer-main {
@@ -1892,10 +1962,9 @@
             display: block;
             color: #fff;
             text-decoration: none;
-            border: 2px solid #fff;
             padding: 5px 15px;
             width: fit-content;
-            font-family: 'Playfair Display', serif;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
             text-transform: lowercase;
         }
 
@@ -2171,7 +2240,7 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            <div class="top-bar-msg">Due to the COVID 19 epidemic, orders may be processed with a slight delay</div>
+            <div class="top-bar-msg">بسبب وباء كوفيد 19، قد يتم معالجة الطلبات بتأخير طفيف</div>
 
         </div>
     </div>
@@ -2185,33 +2254,35 @@
                     <span></span>
                     <span></span>
                 </div>
-                <a href="#" class="logo">puritane</a>
+                <a href="#" class="logo">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png   " alt="بيوريتانز برايد">
+                </a>
             </div>
             <div class="search-bar">
                 <form action="#" class="search-form">
                     <select class="search-cat">
-                        <option>All Categories</option>
-                        <option>Health Care</option>
-                        <option>Personal Care</option>
-                        <option>Beauty Care</option>
-                        <option>Skin Care</option>
-                        <option>Baby Care</option>
+                        <option>جميع الفئات</option>
+                        <option>الرعاية الصحية</option>
+                        <option>العناية الشخصية</option>
+                        <option>العناية بالجمال</option>
+                        <option>العناية بالبشرة</option>
+                        <option>العناية بالطفل</option>
                     </select>
-                    <input type="text" placeholder="Search for products...">
-                    <button type="submit">Search</button>
+                    <input type="text" placeholder="البحث عن المنتجات...">
+                    <button type="submit">بحث</button>
                 </form>
             </div>
             <div class="header-right">
                 <div class="header-contact">
                     <span class="contact-icon">📞</span>
                     <div class="contact-details">
-                        <span class="contact-label">Call Us:</span>
+                        <span class="contact-label">اتصل بنا:</span>
                         <span class="contact-number">+00 123-456-789</span>
                     </div>
                 </div>
                 <a href="#" class="header-cart">
                     <span class="cart-icon">🛒</span>
-                    <span class="cart-text">Cart: $0.00</span>
+                    <span class="cart-text">السلة: $0.00</span>
                 </a>
             </div>
         </div>
@@ -2221,25 +2292,25 @@
     <nav class="nav-bar">
         <div class="container">
             <div class="categories-dropdown">
-                <span>☰ &nbsp; SHOP BY CATEGORIES</span>
+                <span>☰ &nbsp; تسوق حسب الفئات</span>
                 <span>▼</span>
                 <ul class="categories-menu">
-                    <li><a href="#">Health Care</a></li>
-                    <li><a href="#">Personal Care</a></li>
-                    <li><a href="#">Skin Care</a></li>
-                    <li><a href="#">Baby Care</a></li>
-                    <li><a href="#">Nutrition</a></li>
-                    <li><a href="#">Medical Supplies</a></li>
-                    <li><a href="#">Beauty & Fragrance</a></li>
+                    <li><a href="#">الرعاية الصحية</a></li>
+                    <li><a href="#">العناية الشخصية</a></li>
+                    <li><a href="#">العناية بالبشرة</a></li>
+                    <li><a href="#">العناية بالطفل</a></li>
+                    <li><a href="#">التغذية</a></li>
+                    <li><a href="#">المستلزمات الطبية</a></li>
+                    <li><a href="#">الجمال والعطور</a></li>
                 </ul>
             </div>
             <ul class="main-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Health Care</a></li>
-                <li><a href="#">Beauty</a></li>
-                <li><a href="#">Daily Deals</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">المتجر</a></li>
+                <li><a href="#">الرعاية الصحية</a></li>
+                <li><a href="#">الجمال</a></li>
+                <li><a href="#">عروض يومية</a></li>
+                <li><a href="#">اتصل بنا</a></li>
             </ul>
         </div>
     </nav>
@@ -2251,28 +2322,28 @@
             <div class="mobile-menu-body">
                 <div class="mobile-search">
                     <form action="#" class="search-form">
-                        <input type="text" placeholder="Search products...">
-                        <button type="submit">Search</button>
+                        <input type="text" placeholder="البحث عن المنتجات...">
+                        <button type="submit">بحث</button>
                     </form>
                 </div>
                 <ul class="mobile-nav-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Health Care</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">Daily Deals</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">المتجر</a></li>
+                    <li><a href="#">الرعاية الصحية</a></li>
+                    <li><a href="#">الجمال</a></li>
+                    <li><a href="#">عروض يومية</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
                 </ul>
                 <div class="mobile-categories">
-                    <h3>Categories</h3>
+                    <h3>الفئات</h3>
                     <ul>
-                        <li><a href="#">Health Care</a></li>
-                        <li><a href="#">Personal Care</a></li>
-                        <li><a href="#">Skin Care</a></li>
-                        <li><a href="#">Baby Care</a></li>
-                        <li><a href="#">Nutrition</a></li>
-                        <li><a href="#">Medical Supplies</a></li>
-                        <li><a href="#">Beauty & Fragrance</a></li>
+                        <li><a href="#">الرعاية الصحية</a></li>
+                        <li><a href="#">العناية الشخصية</a></li>
+                        <li><a href="#">العناية بالبشرة</a></li>
+                        <li><a href="#">العناية بالطفل</a></li>
+                        <li><a href="#">التغذية</a></li>
+                        <li><a href="#">المستلزمات الطبية</a></li>
+                        <li><a href="#">الجمال والعطور</a></li>
                     </ul>
                 </div>
             </div>
@@ -2289,19 +2360,19 @@
                             <ul class="splide__list">
                                 <li class="splide__slide">
                                     <img src="https://puritanspride.com.eg/slider/larg/news_1748519965.png"
-                                        alt="Hero Banner 1" style="width:100%; height:100%; object-fit:cover;">
+                                        alt="بانر هيرو 1" style="width:100%; height:100%; object-fit:cover;">
                                 </li>
                                 <li class="splide__slide">
                                     <img src="https://puritanspride.com.eg/slider/larg/news_1748951536.jpg"
-                                        alt="Hero Banner 2" style="width:100%; height:100%; object-fit:cover;">
+                                        alt="بانر هيرو 2" style="width:100%; height:100%; object-fit:cover;">
                                 </li>
                                 <li class="splide__slide">
                                     <img src="https://puritanspride.com.eg/slider/larg/news_1748519899.png"
-                                        alt="Hero Banner 3" style="width:100%; height:100%; object-fit:cover;">
+                                        alt="بانر هيرو 3" style="width:100%; height:100%; object-fit:cover;">
                                 </li>
                                 <li class="splide__slide">
                                     <img src="https://puritanspride.com.eg/slider/larg/news_1748951473.jpg"
-                                        alt="Hero Banner 4" style="width:100%; height:100%; object-fit:cover;">
+                                        alt="بانر هيرو 4" style="width:100%; height:100%; object-fit:cover;">
                                 </li>
                             </ul>
                         </div>
@@ -2310,12 +2381,12 @@
                 <div class="hero-side-banners reveal">
                     <a href="#" class="side-banner reveal" style="flex: 2;">
                         <img src="https://puritanspride.com.eg/listshow/larg/img_ar11_1640851950.jpeg"
-                            alt="Side Banner 1">
+                            alt="بانر جانبي 1">
 
                     </a>
                     <a href="#" class="side-banner reveal">
                         <img src="https://puritanspride.com.eg/listshow/larg/img_ar12_1748520150.png"
-                            alt="Side Banner 2">
+                            alt="بانر جانبي 2">
 
                     </a>
                 </div>
@@ -2331,32 +2402,32 @@
                     style="display: flex; align-items: center; gap: 20px; padding: 25px; border: 1px solid #f0f0f0; border-radius: 12px; transition: 0.3s; cursor: default;">
                     <div style="font-size: 35px; color: var(--primary);">🚚</div>
                     <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">Free delivery over $100</h4>
-                        <p style="margin: 0; color: #777; font-size: 14px;">On all orders from our store</p>
+                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">توصيل مجاني فوق $100</h4>
+                        <p style="margin: 0; color: #777; font-size: 14px;">على جميع الطلبات من متجرنا</p>
                     </div>
                 </div>
                 <div class="reveal"
                     style="display: flex; align-items: center; gap: 20px; padding: 25px; border: 1px solid #f0f0f0; border-radius: 12px; transition: 0.3s; cursor: default;">
                     <div style="font-size: 35px; color: var(--primary);">🔄</div>
                     <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">Easy return policy</h4>
-                        <p style="margin: 0; color: #777; font-size: 14px;">30 days return guarantee</p>
+                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">سياسة إرجاع سهلة</h4>
+                        <p style="margin: 0; color: #777; font-size: 14px;">ضمان إرجاع لمدة 30 يومًا</p>
                     </div>
                 </div>
                 <div class="reveal"
                     style="display: flex; align-items: center; gap: 20px; padding: 25px; border: 1px solid #f0f0f0; border-radius: 12px; transition: 0.3s; cursor: default;">
                     <div style="font-size: 35px; color: var(--primary);">🛡️</div>
                     <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">100% Money back</h4>
-                        <p style="margin: 0; color: #777; font-size: 14px;">Secure payment methods</p>
+                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">استرداد الأموال 100%</h4>
+                        <p style="margin: 0; color: #777; font-size: 14px;">طرق دفع آمنة</p>
                     </div>
                 </div>
                 <div class="reveal"
                     style="display: flex; align-items: center; gap: 20px; padding: 25px; border: 1px solid #f0f0f0; border-radius: 12px; transition: 0.3s; cursor: default;">
                     <div style="font-size: 35px; color: var(--primary);">💬</div>
                     <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">24/7 Support</h4>
-                        <p style="margin: 0; color: #777; font-size: 14px;">Dedicated support team</p>
+                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">دعم 24/7</h4>
+                        <p style="margin: 0; color: #777; font-size: 14px;">فريق دعم مخصص</p>
                     </div>
                 </div>
             </div>
@@ -2367,75 +2438,74 @@
     <section class="categories-slider-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Popular Categories</h2>
-                <a href="#" style="font-weight: 600; color: var(--primary); text-decoration: underline;">See All
-                    Categories</a>
+                <h2 class="section-title">الفئات الشائعة</h2>
+                <a href="#" style="font-weight: 600; color: var(--primary); text-decoration: underline;">مشاهدة جميع الفئات</a>
             </div>
 
             <div id="categories-slider" class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide reveal-scale">
+                        <li class="splide__slide">
                             <a href="#" class="category-item cat-foundation">
                                 <div class="category-image-wrap">
                                     <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat04.jpg"
-                                        alt="Foundation">
+                                        alt="كريم أساس">
                                 </div>
-                                <span class="category-name">Foundation</span>
+                                <span class="category-name">كريم أساس</span>
                             </a>
                         </li>
-                        <li class="splide__slide reveal-scale">
+                        <li class="splide__slide">
                             <a href="#" class="category-item cat-concealer">
                                 <div class="category-image-wrap">
                                     <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat05.jpg"
-                                        alt="Concealer">
+                                        alt="خافي عيوب">
                                 </div>
-                                <span class="category-name">Concealer</span>
+                                <span class="category-name">خافي عيوب</span>
                             </a>
                         </li>
-                        <li class="splide__slide reveal-scale">
+                        <li class="splide__slide">
                             <a href="#" class="category-item cat-serum">
                                 <div class="category-image-wrap">
                                     <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat03.jpg"
-                                        alt="Serum">
+                                        alt="سيروم">
                                 </div>
-                                <span class="category-name">Serum</span>
+                                <span class="category-name">سيروم</span>
                             </a>
                         </li>
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-moisturiser">
                                 <div class="category-image-wrap">
                                     <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat02.jpg"
-                                        alt="Moisturiser">
+                                        alt="مرطب">
                                 </div>
-                                <span class="category-name">Moisturiser</span>
+                                <span class="category-name">مرطب</span>
                             </a>
                         </li>
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-creams">
                                 <div class="category-image-wrap">
                                     <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat01.jpg"
-                                        alt="Creams">
+                                        alt="كريمات">
                                 </div>
-                                <span class="category-name">Creams</span>
+                                <span class="category-name">كريمات</span>
                             </a>
                         </li>
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-vitamin-c">
                                 <div class="category-image-wrap">
                                     <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat06.jpg"
-                                        alt="Vitamin C">
+                                        alt="فيتامين سي">
                                 </div>
-                                <span class="category-name">Vitamin C</span>
+                                <span class="category-name">فيتامين سي</span>
                             </a>
                         </li>
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-sunscreens">
                                 <div class="category-image-wrap">
                                     <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat07.jpg"
-                                        alt="Sunscreens">
+                                        alt="واقي شمس">
                                 </div>
-                                <span class="category-name">Sunscreens</span>
+                                <span class="category-name">واقي شمس</span>
                             </a>
                         </li>
                     </ul>
@@ -2448,62 +2518,62 @@
     <section class="section" style="background: #fcfcfc;">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Hair and skin care</h2>
-                <a href="#" class="view-all">View All</a>
+                <h2 class="section-title">العناية بالشعر والبشرة</h2>
+                <a href="#" class="view-all">مشاهدة الكل</a>
             </div>
             <div class="products-grid">
                 <div class="product-card reveal">
                     <span class="product-badge sale">-17%</span>
                     <div class="product-image-wrap">
                         <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/08-300x300.jpg"
-                            alt="Blood Pressure Monitor">
+                            alt="جهاز قياس ضغط الدم">
                     </div>
-                    <h3 class="product-title">Easycare Big Display Digital Blood Pressure Monitor</h3>
+                    <h3 class="product-title">جهاز قياس ضغط الدم الرقمي بشاشة كبيرة من إيزي كير</h3>
                     <div class="rating-stars">★★★★★</div>
                     <div class="product-price-row">
                         <span class="price">$14.40</span>
                     </div>
-                    <a href="#" class="add-to-cart">ADD TO CART</a>
+                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
                 <div class="product-card reveal">
                     <span class="product-badge sale">-13%</span>
                     <div class="product-image-wrap">
                         <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/24-300x300.jpg"
-                            alt="Baby Lotion">
+                            alt="لوشن أطفال">
                     </div>
-                    <h3 class="product-title">Himalaya Baby Body Lotion 400 ml Pack Of 2</h3>
+                    <h3 class="product-title">لوشن جسم للأطفال من هيمالايا 400 مل عبوة من 2</h3>
                     <div class="rating-stars">★★★★★</div>
                     <div class="product-price-row">
                         <span class="price">$25.00</span>
                         <span class="old-price">$28.60</span>
                     </div>
-                    <a href="#" class="add-to-cart">ADD TO CART</a>
+                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
                 <div class="product-card reveal">
                     <span class="product-badge sale">-9%</span>
                     <div class="product-image-wrap">
                         <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/11-300x300.jpg"
-                            alt="Hand Sanitizer">
+                            alt="معقم اليدين">
                     </div>
-                    <h3 class="product-title">Purell Advanced Hand Sanitizer Refreshing Gel</h3>
+                    <h3 class="product-title">جل معقم اليدين المنعش المتطور من بيوريل</h3>
                     <div class="rating-stars">★★★★★</div>
                     <div class="product-price-row">
                         <span class="price">$8.50</span>
                     </div>
-                    <a href="#" class="add-to-cart">ADD TO CART</a>
+                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
                 <div class="product-card reveal">
                     <span class="product-badge sale">-12%</span>
                     <div class="product-image-wrap">
                         <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/01-300x300.jpg"
-                            alt="Pulse Oximeter">
+                            alt="مقياس التأكسج النبضي">
                     </div>
-                    <h3 class="product-title">Digital Pulse Oximeter with OLED Display</h3>
+                    <h3 class="product-title">مقياس التأكسج النبضي الرقمي بشاشة OLED</h3>
                     <div class="rating-stars">★★★★★</div>
                     <div class="product-price-row">
                         <span class="price">$12.00</span>
                     </div>
-                    <a href="#" class="add-to-cart">ADD TO CART</a>
+                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
             </div>
         </div>
@@ -2514,15 +2584,15 @@
     <section class="section bestselling-section" style="background: var(--white); padding: 60px 0;">
         <div class="container" style="max-width: 100%; padding: 0 40px;">
             <div class="section-header">
-                <h2 class="section-title">Bestselling</h2>
+                <h2 class="section-title">الأكثر مبيعاً</h2>
                 <div style="display: flex; align-items: center;">
                     <div class="tabs-wrapper">
-                        <button class="tab-btn active" onclick="openTab(event, 'serum')">Serum</button>
-                        <button class="tab-btn" onclick="openTab(event, 'foundation')">Foundation</button>
-                        <button class="tab-btn" onclick="openTab(event, 'concealer')">Concealer</button>
-                        <button class="tab-btn" onclick="openTab(event, 'moisturiser')">Moisturiser</button>
+                        <button class="tab-btn active" onclick="openTab(event, 'serum')">سيروم</button>
+                        <button class="tab-btn" onclick="openTab(event, 'foundation')">كريم أساس</button>
+                        <button class="tab-btn" onclick="openTab(event, 'concealer')">خافي عيوب</button>
+                        <button class="tab-btn" onclick="openTab(event, 'moisturiser')">مرطب</button>
                     </div>
-                    <a href="#" class="see-all-link">See All Products</a>
+                    <a href="#" class="see-all-link">مشاهدة جميع المنتجات</a>
                 </div>
             </div>
 
@@ -2533,11 +2603,11 @@
                         <span class="product-badge">-10%</span>
                         <div class="product-image-wrap">
                             <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/23.jpg"
-                                alt="Product">
+                                alt="منتج">
 
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">Ascorbic Acid 8% + Alpha Arbutin 2% 30ml</h3>
+                            <h3 class="product-title">حمض الأسكوربيك 8% + ألفا أربوتين 2% 30 مل</h3>
                             <div class="rating-stars">★★★★★</div>
                             <div class="product-price-row">
                                 <span class="old-price">$200</span>
@@ -2550,11 +2620,11 @@
                         <span class="product-badge">-7%</span>
                         <div class="product-image-wrap">
                             <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/24.jpg"
-                                alt="Product">
+                                alt="منتج">
 
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">Moon Fruit 1% Bakuchiol Alternative Serum</h3>
+                            <h3 class="product-title">سيروم مون فروت 1% بديل الباكوتشيول</h3>
                             <div class="rating-stars">★★★★★</div>
                             <div class="product-price-row">
                                 <span class="old-price">$300</span>
@@ -2567,11 +2637,11 @@
                         <span class="product-badge">-20%</span>
                         <div class="product-image-wrap">
                             <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/18.jpg"
-                                alt="Product">
+                                alt="منتج">
 
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">Mz Skin Reviving Antioxidant Glow Oil 30ml</h3>
+                            <h3 class="product-title">زيت إم زي سكين المنعش والمضاد للأكسدة 30 مل</h3>
                             <div class="rating-stars">★★★★★</div>
                             <div class="product-price-row">
                                 <span class="old-price">$249</span>
@@ -2583,10 +2653,10 @@
                     <div class="product-card reveal">
                         <div class="product-image-wrap">
                             <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/21.jpg"
-                                alt="Product">
+                                alt="منتج">
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">Good Genes Glycolic Acid Treatment 30ml</h3>
+                            <h3 class="product-title">علاج جود جينز بحمض الجليكوليك 30 مل</h3>
                             <div class="rating-stars">★★★★★</div>
                             <div class="product-price-row">
                                 <span class="price">$60 – $75</span>
@@ -2603,32 +2673,33 @@
         </div>
     </section>
 
+    <!-- sponser for some products section -->
     <section class="section">
         <div class="container" style="max-width: 100%; padding: 0 40px;">
             <div class="modern-dual-banners">
                 <!-- Left Banner -->
                 <a href="#" class="modern-banner banner-pink reveal">
                     <div class="modern-banner-content">
-                        <h2>Eyes That Speak<br>Eyeliner Perfect</h2>
-                        <p>Nourish your skin, and celebrate</p>
-                        <span class="shop-now">Shop Now</span>
+                        <h2>عيون تتحدث<br>آيلاينر مثالي</h2>
+                        <p>غذي بشرتك، واحتفلي بجمالك</p>
+                        <span class="shop-now">تسوق الآن</span>
                     </div>
                     <div class="modern-banner-image">
                         <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner03.jpg"
-                            alt="Eyeliner">
+                            alt="آيلاينر">
                     </div>
                 </a>
 
                 <!-- Right Banner -->
                 <a href="#" class="modern-banner banner-beige reveal">
                     <div class="modern-banner-content">
-                        <h2>Color Your World<br>With Elegance</h2>
-                        <p>Every gesture, and every moment</p>
-                        <span class="shop-now">Shop Now</span>
+                        <h2>لوني عالمك<br>بأناقة</h2>
+                        <p>كل حركة، وكل لحظة تميزك</p>
+                        <span class="shop-now">تسوق الآن</span>
                     </div>
                     <div class="modern-banner-image">
                         <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner04.jpg"
-                            alt="Cosmetics">
+                            alt="مستحضرات تجميل">
                     </div>
                 </a>
             </div>
@@ -2641,10 +2712,11 @@
             <div class="footer-main">
                 <!-- Col 1 -->
                 <div class="footer-col reveal">
-                    <a href="#" class="footer-logo">puritane</a>
+                    <a href="#" class="footer-logo">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    </a>
                     <div class="footer-contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 99 New Theme St. XY, USA 12345,<br>Beside the Sun point
-                            land.</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 99 شارع النمط الجديد، الولايات المتحدة 12345،<br>بجانب نقطة الشمس.</p>
                         <p><i class="fas fa-phone-alt"></i> +00 123-456-789</p>
                         <p><i class="fas fa-envelope"></i> demo@example.com</p>
                     </div>
@@ -2652,45 +2724,45 @@
 
                 <!-- Col 2 -->
                 <div class="footer-col reveal">
-                    <h3>Get to know Us</h3>
+                    <h3>تعرف علينا</h3>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Term & Policy</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">News & Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الشروط والسياسة</a></li>
+                        <li><a href="#">الوظائف</a></li>
+                        <li><a href="#">الأخبار والمدونة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3 -->
                 <div class="footer-col reveal">
-                    <h3>Information</h3>
+                    <h3>معلومات</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Feedback</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">Payments</a></li>
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">التعليقات</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">دليل المقاسات</a></li>
+                        <li><a href="#">المدفوعات</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 4 -->
                 <div class="footer-col reveal">
-                    <h3>Orders & Returns</h3>
+                    <h3>الطلبات والمرتجعات</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Track Order</a></li>
-                        <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Exchange</a></li>
+                        <li><a href="#">تتبع الطلب</a></li>
+                        <li><a href="#">التوصيل</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">المرتجعات</a></li>
+                        <li><a href="#">الاستبدال</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 5 -->
                 <div class="footer-col reveal">
-                    <h3>Let's keep in touch</h3>
+                    <h3>ابقَ على تواصل</h3>
                     <div class="newsletter-box">
-                        <input type="email" placeholder="Your email address">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني">
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </div>
                     <div class="social-icons">
@@ -2705,16 +2777,12 @@
 
             <div class="footer-bottom">
                 <div style="display: flex; align-items: center; gap: 30px;">
-                    <p class="footer-copyright">© 2026 Puritane - E-commerce Store. All Rights Reserved.</p>
-                    <!-- <div class="theme-switcher">
-                        <span class="active"><i class="fas fa-sun"></i></span>
-                        <span><i class="fas fa-moon"></i></span>
-                    </div> -->
+                    <p class="footer-copyright">© 2026 بيوريتان - متجر تجارة إلكترونية. جميع الحقوق محفوظة.</p>
                 </div>
                 <div class="footer-bottom-right">
                     <div class="payment-methods">
                         <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png"
-                            alt="Payments">
+                            alt="المدفوعات">
                     </div>
                     <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
                 </div>
@@ -2726,46 +2794,48 @@
     <div class="mobile-menu-overlay" id="menuOverlay"></div>
     <div class="mobile-menu-drawer" id="mobileMenu">
         <div class="mobile-menu-header">
-            <h2>Menu</h2>
+            <a href="#" class="logo">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+            </a>
             <span class="close-menu" id="closeMenu">&times;</span>
         </div>
         <div class="mobile-search">
-            <input type="text" placeholder="Search products...">
+            <input type="text" placeholder="البحث عن المنتجات...">
         </div>
         <ul class="mobile-menu-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="#">الرئيسية</a></li>
             <li>
-                <a href="#" class="has-badge">Shop <span class="menu-badge badge-hot">Hot</span></a>
+                <a href="#" class="has-badge">المتجر <span class="menu-badge badge-hot">ساخن</span></a>
                 <ul class="mobile-sub-menu">
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Best Sellers</a></li>
-                    <li><a href="#">Featured Products</a></li>
+                    <li><a href="#">وصل حديثاً</a></li>
+                    <li><a href="#">الأكثر مبيعاً</a></li>
+                    <li><a href="#">منتجات مميزة</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">Skin Care</a>
+                <a href="#">العناية بالبشرة</a>
                 <ul class="mobile-sub-menu">
-                    <li><a href="#">Anti Aging</a></li>
-                    <li><a href="#">Face Wash</a></li>
-                    <li><a href="#">Moisturiser</a></li>
-                    <li><a href="#">Skin Care Combo</a></li>
+                    <li><a href="#">مكافحة الشيخوخة</a></li>
+                    <li><a href="#">غسول الوجه</a></li>
+                    <li><a href="#">مرطب</a></li>
+                    <li><a href="#">مجموعة العناية بالبشرة</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">Personal Care</a>
+                <a href="#">العناية الشخصية</a>
                 <ul class="mobile-sub-menu">
-                    <li><a href="#">Cleansing products</a></li>
-                    <li><a href="#">Feminine care</a></li>
-                    <li><a href="#">Hair care</a></li>
-                    <li><a href="#">Oral care</a></li>
+                    <li><a href="#">منتجات التنظيف</a></li>
+                    <li><a href="#">العناية النسائية</a></li>
+                    <li><a href="#">العناية بالشعر</a></li>
+                    <li><a href="#">العناية بالفم</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="has-badge">Beauty <span class="menu-badge badge-new">New</span></a></li>
-            <li><a href="#" class="has-badge">Daily Deals <span class="menu-badge badge-sale">Sale</span></a></li>
-            <li><a href="#">Baby Care</a></li>
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Wishlist</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#" class="has-badge">الجمال <span class="menu-badge badge-new">جديد</span></a></li>
+            <li><a href="#" class="has-badge">عروض يومية <span class="menu-badge badge-sale">تخفيض</span></a></li>
+            <li><a href="#">العناية بالطفل</a></li>
+            <li><a href="#">حسابي</a></li>
+            <li><a href="#">قائمة الأمنيات</a></li>
+            <li><a href="#">اتصل بنا</a></li>
         </ul>
     </div>
 
@@ -2773,28 +2843,36 @@
     <div class="sales-notification" id="sales-notify">
         <span class="sales-close" onclick="closeNotify()">&times;</span>
         <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/22-100x100.jpg"
-            alt="Product" class="sales-img">
+            alt="منتج" class="sales-img">
         <div class="sales-content">
-            <b>Someone in Cairo purchased</b>
-            <span>Liveasy Diabetic Protein - Sugar Management</span>
-            <small style="display: block; color: var(--gray); margin-top: 5px;">35 minutes ago</small>
+            <b>شخص ما في القاهرة اشترى</b>
+            <span>لايف إيزي بروتين السكري - إدارة السكر</span>
+            <small style="display: block; color: var(--gray); margin-top: 5px;">منذ 35 دقيقة</small>
         </div>
     </div>
 
+
+
+
+
+
+    
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
-        // Initialize Splide Slider for Categories
-        document.addEventListener('DOMContentLoaded', function () {
+        // Initialize Sliders with a small delay to ensure layout is ready
+        window.addEventListener('load', function () {
             if (document.querySelector('#categories-slider')) {
                 new Splide('#categories-slider', {
-                    type: '',
+                    type: 'loop',
                     perPage: 6,
                     perMove: 1,
                     gap: '20px',
                     pagination: false,
                     arrows: true,
+                    direction: 'rtl',
+                    autoWidth: false,
                     breakpoints: {
                         1200: { perPage: 4 },
                         992: { perPage: 3 },
@@ -2804,18 +2882,26 @@
                 }).mount();
             }
 
-            // Initialize Hero Slider
             if (document.querySelector('#hero-slider')) {
                 new Splide('#hero-slider', {
-                    type: 'fade',
-                    rewind: true,
+                    type: 'loop',
+                    direction: 'rtl',
                     arrows: true,
                     pagination: true,
                     autoplay: true,
                     interval: 5000,
-                    speed: 1000,
-                    height: '100%',
-                    pagination:true,
+                    speed: 800,
+                    height: '460px',
+                    cover: true,
+                    autoWidth: false,
+                    breakpoints: {
+                        992: {
+                            height: '380px',
+                        },
+                        640: {
+                            height: '200px',
+                        },
+                    }
                 }).mount();
             }
         });
@@ -2880,20 +2966,20 @@
             evt.currentTarget.classList.add("active");
         }
 
-        // Simple Sales Notification Logic
+        // منطق إشعارات المبيعات البسيطة
         function showNotify() {
             const products = [
-                { name: "Liveasy Diabetic Protein -Sugar Management", city: "John (San Francisco)", time: "35 minutes ago", img: "22-100x100.jpg" },
-                { name: "mCaffeine Deep Moisturization- Body Butter", city: "Someone", time: "4 hours ago", img: "23-100x100.jpg" },
-                { name: "Himalaya Baby Body Lotion 400 ml Pack Of 2", city: "Ben (New York)", time: "3 hours ago", img: "24-100x100.jpg" },
-                { name: "Newnik Fingertip Pulse Oximeter With Audio", city: "Swaraa (California)", time: "3 hours ago", img: "19-100x100.jpg" }
+                { name: "لايف إيزي بروتين السكري - إدارة السكر", city: "أحمد (القاهرة)", time: "منذ 35 دقيقة", img: "22-100x100.jpg" },
+                { name: "إم كافيين زبدة الجسم بالترطيب العميق", city: "شخص ما", time: "منذ 4 ساعات", img: "23-100x100.jpg" },
+                { name: "هيمالايا لوشن جسم للأطفال 400 مل عبوة من 2", city: "سارة (الإسكندرية)", time: "منذ 3 ساعات", img: "24-100x100.jpg" },
+                { name: "نيونيك مقياس التأكسج النبضي بطرف الإصبع مع صوت", city: "ليلى (الجيزة)", time: "منذ 3 ساعات", img: "19-100x100.jpg" }
             ];
 
             const randomProduct = products[Math.floor(Math.random() * products.length)];
             const notify = document.getElementById('sales-notify');
 
             if (notify) {
-                notify.querySelector('b').innerText = `${randomProduct.city} recently purchased`;
+                notify.querySelector('b').innerText = `شخص ما في ${randomProduct.city} اشترى`;
                 notify.querySelector('span').innerText = randomProduct.name;
                 notify.querySelector('small').innerText = randomProduct.time;
                 notify.querySelector('img').src = `https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/${randomProduct.img}`;

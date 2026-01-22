@@ -107,9 +107,9 @@ img {
     background: #ddd;
 }
 
-/* Playfair Display Font */
+/* IBM Plex Sans Arabic Font */
 .playfair {
-    font-family: 'Playfair Display', serif;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 /* Product Badges */
