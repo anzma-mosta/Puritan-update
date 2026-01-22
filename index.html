@@ -75,7 +75,7 @@
 
         .top-bar .container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -1355,10 +1355,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.171);
             z-index: 1999;
             display: none;
-            backdrop-filter: blur(3px);
+            backdrop-filter: blur(1px);
         }
 
         .mobile-menu-overlay.active {
@@ -2391,7 +2391,7 @@
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="container">
+        <div class="container top-bar-container">
             <div class="top-bar-msg">بسبب وباء كوفيد 19، قد يتم معالجة الطلبات بتأخير طفيف</div>
 
         </div>
@@ -3085,16 +3085,10 @@
             alt="منتج" class="sales-img">
         <div class="sales-content">
             <b>شخص ما في القاهرة اشترى</b>
-            <span>لايف إيزي بروتين السكري - إدارة السكر</span>
+            <!-- <span>لايف إيزي بروتين السكري - إدارة السكر</span> -->
             <small style="display: block; color: var(--gray); margin-top: 5px;">منذ 35 دقيقة</small>
         </div>
     </div>
-
-
-
-
-
-
 
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
@@ -3299,47 +3293,47 @@
             revealObserver.observe(el);
         });
 
-        // Countdown Timer Logic
-        function updateTimers() {
-            document.querySelectorAll('.countdown-timer').forEach(timer => {
-                const daysEl = timer.querySelector('.timer-item:nth-child(1) .timer-val');
-                const hoursEl = timer.querySelector('.timer-item:nth-child(2) .timer-val');
-                const minsEl = timer.querySelector('.timer-item:nth-child(3) .timer-val');
-                const secsEl = timer.querySelector('.timer-item:nth-child(4) .timer-val');
+        // Countdown Timer Logic if we need it another time
+        // function updateTimers() {
+        //     document.querySelectorAll('.countdown-timer').forEach(timer => {
+        //         const daysEl = timer.querySelector('.timer-item:nth-child(1) .timer-val');
+        //         const hoursEl = timer.querySelector('.timer-item:nth-child(2) .timer-val');
+        //         const minsEl = timer.querySelector('.timer-item:nth-child(3) .timer-val');
+        //         const secsEl = timer.querySelector('.timer-item:nth-child(4) .timer-val');
 
-                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+        //         if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
 
-                let days = parseInt(daysEl.innerText);
-                let hours = parseInt(hoursEl.innerText);
-                let mins = parseInt(minsEl.innerText);
-                let secs = parseInt(secsEl.innerText);
+        //         let days = parseInt(daysEl.innerText);
+        //         let hours = parseInt(hoursEl.innerText);
+        //         let mins = parseInt(minsEl.innerText);
+        //         let secs = parseInt(secsEl.innerText);
 
-                if (secs > 0) {
-                    secs--;
-                } else {
-                    secs = 59;
-                    if (mins > 0) {
-                        mins--;
-                    } else {
-                        mins = 59;
-                        if (hours > 0) {
-                            hours--;
-                        } else {
-                            hours = 23;
-                            if (days > 0) {
-                                days--;
-                            }
-                        }
-                    }
-                }
+        //         if (secs > 0) {
+        //             secs--;
+        //         } else {
+        //             secs = 59;
+        //             if (mins > 0) {
+        //                 mins--;
+        //             } else {
+        //                 mins = 59;
+        //                 if (hours > 0) {
+        //                     hours--;
+        //                 } else {
+        //                     hours = 23;
+        //                     if (days > 0) {
+        //                         days--;
+        //                     }
+        //                 }
+        //             }
+        //         }
 
-                daysEl.innerText = days;
-                hoursEl.innerText = hours.toString().padStart(2, '0');
-                minsEl.innerText = mins.toString().padStart(2, '0');
-                secsEl.innerText = secs.toString().padStart(2, '0');
-            });
-        }
-        setInterval(updateTimers, 1000);
+        //         daysEl.innerText = days;
+        //         hoursEl.innerText = hours.toString().padStart(2, '0');
+        //         minsEl.innerText = mins.toString().padStart(2, '0');
+        //         secsEl.innerText = secs.toString().padStart(2, '0');
+        //     });
+        // }
+        // setInterval(updateTimers, 1000);
     </script>
 </body>
 
