@@ -8,12 +8,14 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <style>
+    <!-- <style>
         :root {
             --primary: #2b57a2;
             --secondary: #33a58e;
@@ -40,6 +42,7 @@
             line-height: 1.6;
         }
 
+        
         a {
             text-decoration: none;
             color: inherit;
@@ -66,49 +69,93 @@
 
         /* Top Bar */
         .top-bar {
-            background: var(--primary);
+            background: #004785;
             color: var(--white);
-            padding: 10px 0;
+            padding: 12px 0;
             font-size: 13px;
             font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .top-bar .container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            direction: rtl;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .auth-links {
+            display: flex;
+            gap: 12px;
             align-items: center;
         }
 
-        .top-bar-links {
+        .auth-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .auth-links a:hover {
+            color: #98c628;
+        }
+
+        .lang-switcher {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 15px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #98c628;
+            transform: translateY(-2px);
+        }
+
+        .top-contact {
             display: flex;
             gap: 20px;
         }
 
-        .top-bar-links a {
-            color: var(--white);
-            transition: 0.3s;
-        }
-
-        .top-bar-links a:hover {
-            opacity: 0.8;
-        }
-
-        .my-account {
-            font-weight: 600;
+        .top-contact span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* Header */
         .main-header {
-            padding: 20px 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            background: #004785; /* Unified color */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .main-header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
+            direction: rtl;
+            flex-direction: row-reverse !important;
         }
 
         .header-left {
@@ -125,137 +172,156 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 75px; /* Slightly larger logo */
             width: auto;
             object-fit: contain;
             transition: all 0.3s ease;
         }
-
-        .logo:hover img {
-            transform: scale(1.05);
-        }
+        
+        /* If the logo image has a white background, we might need to adjust it or keep it as is. The user's image shows a blue header with a white logo area or transparent. */
 
         .search-bar {
             flex: 1;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .search-form {
             display: flex;
             width: 100%;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            background: #f8f8f8;
-        }
-
-        .search-cat {
             border: none;
-            background: #f8f8f8;
-            padding: 0 15px;
-            border-right: 1px solid #ddd;
-            outline: none;
-            cursor: pointer;
-            font-size: 14px;
-            color: #555;
-            display: block;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .search-form input {
             flex: 1;
             border: none;
-            padding: 12px 20px;
+            padding: 12px 25px;
             background: transparent;
             outline: none;
-            font-size: 14px;
+            font-size: 15px;
+            text-align: right;
+            color: #333;
         }
 
         .search-form button {
-            background: var(--primary);
+            background: #98c628;
             color: white;
             border: none;
             padding: 0 25px;
             cursor: pointer;
             font-weight: 600;
             transition: 0.3s;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .search-form button:hover {
-            background: var(--accent);
+            background: #86b023;
         }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            flex-shrink: 0;
-        }
-
-        .header-contact {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-icon {
-            font-size: 24px;
-            color: var(--primary);
-        }
-
-        .contact-details {
+        .header-contact-box {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            color: white; /* Text white for blue background */
         }
 
-        .contact-label {
+        .header-contact-box .label {
             font-size: 12px;
-            color: #777;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2px;
         }
 
-        .contact-number {
+        .header-contact-box .number {
             font-weight: 700;
-            font-size: 15px;
-            color: var(--dark);
-        }
-
-        .header-cart {
-            background: var(--primary);
+            font-size: 18px;
             color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .header-cart:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
         }
 
         /* Navigation */
         .nav-bar {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
+            background: #004785; /* Unified color */
+            color: var(--white);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         .nav-bar .container {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            direction: rtl;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-icon-item {
+            position: relative;
+            font-size: 24px;
+            color: var(--white);
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+        }
+
+        .nav-icon-item:hover {
+            color: #98c628;
+        }
+
+        .nav-icon-item .badge {
+            position: absolute;
+            top: 2px;
+            right: -2px;
+            background: #98c628;
+            color: #004785;
+            font-size: 11px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border: 2px solid #004785;
+        }
+
+        .main-menu {
+            display: flex;
+            gap: 35px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .main-menu li a {
+            color: var(--white);
+            transition: 0.3s;
+            padding: 18px 0;
+            display: block;
+        }
+
+        .main-menu li a:hover {
+            color: #98c628;
         }
 
         .categories-dropdown {
-            background: var(--primary);
-            color: var(--white);
-            padding: 18px 25px;
-            width: 280px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 15px 25px;
+            width: 250px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
@@ -263,22 +329,28 @@
             align-items: center;
             font-size: 15px;
             position: relative;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .categories-dropdown:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .categories-menu {
             position: absolute;
             top: 100%;
             left: 0;
-            width: 280px;
+            width: 250px;
             background: var(--white);
             border: 1px solid var(--border);
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             z-index: 1000;
             display: none;
             padding: 10px 0;
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
+            text-align: right;
         }
 
         .categories-dropdown:hover .categories-menu {
@@ -289,17 +361,17 @@
 
         .categories-menu li a {
             display: block;
-            padding: 12px 25px;
-            color: var(--dark);
+            padding: 12px 20px;
+            color: #333;
             font-weight: 500;
             font-size: 14px;
             transition: 0.3s;
         }
 
         .categories-menu li a:hover {
-            background: var(--light-gray);
-            color: var(--primary);
-            padding-left: 30px;
+            background: #f8f9fb;
+            color: #004785;
+            padding-right: 25px;
         }
 
         .main-menu {
@@ -333,7 +405,7 @@
             display: block;
             width: 25px;
             height: 3px;
-            background: var(--dark);
+            background: #fff;
             transition: 0.3s;
             border-radius: 3px;
         }
@@ -352,7 +424,7 @@
         }
 
         @media (max-width: 992px) {
-            .top-bar-msg {
+            .top-bar-left {
                 display: none;
             }
 
@@ -360,13 +432,12 @@
                 justify-content: center;
             }
 
-            .header-contact {
+            .header-contact-box {
                 display: none;
             }
 
             .nav-bar {
                 display: none;
-                /* We'll use a mobile menu instead */
             }
 
             .hamburger {
@@ -375,10 +446,6 @@
 
             .main-header .container {
                 gap: 15px;
-            }
-
-            .search-cat {
-                display: none;
             }
         }
 
@@ -414,88 +481,6 @@
             .header-right {
                 gap: 15px;
             }
-        }
-
-        /* Mobile Menu Overlay Styles */
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            transition: 0.4s;
-            visibility: hidden;
-        }
-
-        .mobile-menu-overlay.active {
-            left: 0;
-            visibility: visible;
-            position: relative;
-        }
-
-        .mobile-menu-content {
-            width: 300px;
-            height: 100%;
-            background: var(--white);
-            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mobile-menu-header {
-            padding: 20px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .close-menu {
-            font-size: 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--dark);
-        }
-
-        .mobile-menu-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        .mobile-search {
-            margin-bottom: 30px;
-        }
-
-        .mobile-nav-list,
-        .mobile-categories ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .mobile-nav-list li,
-        .mobile-categories li {
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .mobile-nav-list a,
-        .mobile-categories a {
-            display: block;
-            padding: 12px 0;
-            color: var(--dark);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 15px;
-        }
-
-        .mobile-categories h3 {
-            margin: 30px 0 15px;
-            font-size: 18px;
-            color: var(--primary);
         }
 
         /* Splide RTL Fixes */
@@ -867,89 +852,123 @@
         /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 30px;
         }
 
         .product-card {
-            background: var(--white);
-            border: 1px solid #eee;
+            background: #fff;
             border-radius: 15px;
-            padding: 15px;
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
             overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            position: relative;
         }
 
         .product-card:hover {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            border-color: #ddd;
-            transform: none;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .product-image-wrap {
-            width: 100%;
-            height: 350px;
-            background: #f9f9f9;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .product-image {
+            height: 250px;
             overflow: hidden;
             position: relative;
         }
 
-        .product-image-wrap img {
+        .product-image img {
+            object-fit: contain;
+            padding: 15px;
+            background: #fff;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.5s ease;
-        }
-
-        .product-info {
-            padding: 0 15px 20px;
         }
 
         .product-badge {
             position: absolute;
             top: 15px;
-            left: 15px;
-            background: #ef4444;
-            color: var(--white);
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 11px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 12px;
             font-weight: 700;
             z-index: 2;
         }
 
-        .product-title {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--dark);
-            margin-bottom: 8px;
-            height: auto;
-            overflow: visible;
-            display: block;
-            line-height: 1.4;
+        .product-actions {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: 0.3s;
+            z-index: 3;
         }
 
-        .rating-stars {
-            color: #ffc107;
-            font-size: 14px;
+        .product-card:hover .product-actions {
+            bottom: 0;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-category {
+            font-size: 13px;
+            color: var(--gray);
             margin-bottom: 10px;
         }
 
-        .product-price-row {
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .product-price {
             display: flex;
+            justify-content: center;
             align-items: center;
             gap: 10px;
-            margin-top: 0;
-            margin-bottom: 0;
+        }
+
+        .current-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .old-price {
+            font-size: 16px;
+            color: #999;
+            text-decoration: line-through;
         }
 
         /* Deals Section Styles */
@@ -971,100 +990,9 @@
 
         .deals-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
             margin-top: 30px;
-        }
-
-        .deal-card {
-            display: flex;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 20px;
-            align-items: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .deal-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border-color: var(--primary);
-        }
-
-        .deal-image {
-            width: 40%;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .deal-image img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: contain;
-        }
-
-        .deal-content {
-            width: 60%;
-            padding: 0 20px;
-        }
-
-        .deal-content .product-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .deal-content .rating-stars {
-            margin-bottom: 12px;
-        }
-
-        .countdown-timer {
-            display: flex;
-            gap: 8px;
-            margin: 20px 0;
-        }
-
-        .timer-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #fff;
-            border: 1px solid #eee;
-            padding: 4px 8px;
-            border-radius: 4px;
-            min-width: 45px;
-        }
-
-        .timer-val {
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--dark);
-            line-height: 1.2;
-        }
-
-        .timer-label {
-            font-size: 9px;
-            color: #999;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .add-to-cart-link {
-            color: var(--dark);
-            text-decoration: underline;
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .add-to-cart-link:hover {
-            color: var(--primary);
         }
 
         @media (max-width: 992px) {
@@ -1272,7 +1200,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.151) 0%, rgba(255, 255, 255, 0) 100%);
             z-index: 1;
         }
 
@@ -1334,19 +1262,19 @@
         .mobile-menu-drawer {
             position: fixed;
             top: 0;
-            left: -300px;
+            right: -300px;
             width: 300px;
             height: 100%;
             background: var(--white);
             z-index: 2000;
             transition: var(--transition);
-            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
             overflow-y: auto;
             padding: 20px;
         }
 
         .mobile-menu-drawer.active {
-            left: 0;
+            right: 0;
         }
 
         .mobile-menu-overlay {
@@ -1417,9 +1345,9 @@
         .mobile-sub-menu {
             list-style: none;
             background: #fcfcfc;
-            padding-left: 15px;
+            padding-right: 15px;
             margin-bottom: 10px;
-            border-left: 2px solid var(--light-gray);
+            border-right: 2px solid var(--light-gray);
         }
 
         .mobile-sub-menu li a {
@@ -2368,15 +2296,6 @@
         }
 
         /* Hover Effects */
-        .product-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
         .category-card {
             transition: transform 0.3s ease;
         }
@@ -2384,58 +2303,61 @@
         .category-card:hover {
             transform: scale(1.05);
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="container top-bar-container">
-            <div class="top-bar-msg">بسبب وباء كوفيد 19، قد يتم معالجة الطلبات بتأخير طفيف</div>
-
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="auth-links">
+                    <a href="#">دخول</a> / <a href="#">تسجيل جديد</a>
+                </div>
+                <div class="lang-switcher">
+                    <span>اللغة: عربي</span> <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="top-contact">
+                    <span>Healthtomuscles@gmail.com <i class="fa fa-envelope"></i></span>
+                    <span>01068777020 <i class="fa fa-phone"></i></span>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Header -->
     <header class="main-header">
         <div class="container">
-            <div class="header-left">
+            <div class="header-right">
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <a href="#" class="logo">
-                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png   "
-                        alt="بيوريتانز برايد">
-                </a>
+                <div class="header-contact-box">
+                    <span class="label">خدمه العملاء</span>
+                    <span class="number">01068777020</span>
+                </div>
             </div>
             <div class="search-bar">
-                <form action="#" class="search-form">
-                    <select class="search-cat">
-                        <option>جميع الفئات</option>
-                        <option>الرعاية الصحية</option>
-                        <option>العناية الشخصية</option>
-                        <option>العناية بالجمال</option>
-                        <option>العناية بالبشرة</option>
-                        <option>العناية بالطفل</option>
-                    </select>
-                    <input type="text" placeholder="البحث عن المنتجات...">
-                    <button type="submit">بحث</button>
+                <form action="search.html" class="search-form">
+                    <input type="text" placeholder="انت بتدور على ايه ؟" name="q">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <div class="header-right">
-                <div class="header-contact">
-                    <span class="contact-icon">📞</span>
-                    <div class="contact-details">
-                        <span class="contact-label">اتصل بنا:</span>
-                        <span class="contact-number">+00 123-456-789</span>
-                    </div>
-                </div>
-                <a href="#" class="header-cart">
-                    <span class="cart-icon">🛒</span>
-                    <span class="cart-text">السلة: $0.00</span>
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png"
+                        alt="بيوريتانز برايد">
                 </a>
             </div>
         </div>
@@ -2445,8 +2367,8 @@
     <nav class="nav-bar">
         <div class="container">
             <div class="categories-dropdown">
-                <span>☰ &nbsp; تسوق حسب الفئات</span>
-                <span>▼</span>
+                <span><i class="fa fa-bars"></i> &nbsp; جميع الأقسام</span>
+                <span><i class="fa fa-chevron-down" style="font-size: 10px;"></i></span>
                 <ul class="categories-menu">
                     <li><a href="#">الرعاية الصحية</a></li>
                     <li><a href="#">العناية الشخصية</a></li>
@@ -2458,50 +2380,29 @@
                 </ul>
             </div>
             <ul class="main-menu">
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">المتجر</a></li>
-                <li><a href="#">الرعاية الصحية</a></li>
-                <li><a href="#">الجمال</a></li>
-                <li><a href="#">عروض يومية</a></li>
-                <li><a href="#">اتصل بنا</a></li>
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="search.html">المنتجات</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#">المدونة</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenu">
-        <div class="mobile-menu-content">
-
-            <div class="mobile-menu-body">
-                <div class="mobile-search">
-                    <form action="#" class="search-form">
-                        <input type="text" placeholder="البحث عن المنتجات...">
-                        <button type="submit">بحث</button>
-                    </form>
-                </div>
-                <ul class="mobile-nav-list">
-                    <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#">المتجر</a></li>
-                    <li><a href="#">الرعاية الصحية</a></li>
-                    <li><a href="#">الجمال</a></li>
-                    <li><a href="#">عروض يومية</a></li>
-                    <li><a href="#">اتصل بنا</a></li>
-                </ul>
-                <div class="mobile-categories">
-                    <h3>الفئات</h3>
-                    <ul>
-                        <li><a href="#">الرعاية الصحية</a></li>
-                        <li><a href="#">العناية الشخصية</a></li>
-                        <li><a href="#">العناية بالبشرة</a></li>
-                        <li><a href="#">العناية بالطفل</a></li>
-                        <li><a href="#">التغذية</a></li>
-                        <li><a href="#">المستلزمات الطبية</a></li>
-                        <li><a href="#">الجمال والعطور</a></li>
-                    </ul>
-                </div>
+            <div class="nav-icons">
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
             </div>
         </div>
-    </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -2555,7 +2456,7 @@
                     style="display: flex; align-items: center; gap: 20px; padding: 25px; border: 1px solid #f0f0f0; border-radius: 12px; transition: 0.3s; cursor: default;">
                     <div style="font-size: 35px; color: var(--primary);">🚚</div>
                     <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">توصيل مجاني فوق $100</h4>
+                        <h4 style="margin: 0 0 5px 0; font-size: 16px;">توصيل مجاني فوق 1000 ج.م</h4>
                         <p style="margin: 0; color: #777; font-size: 14px;">على جميع الطلبات من متجرنا</p>
                     </div>
                 </div>
@@ -2676,58 +2577,88 @@
                 <a href="#" class="view-all">مشاهدة الكل</a>
             </div>
             <div class="products-grid">
+                <!-- Product 1 -->
                 <div class="product-card reveal">
-                    <span class="product-badge sale">-17%</span>
-                    <div class="product-image-wrap">
-                        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/08-300x300.jpg"
-                            alt="جهاز قياس ضغط الدم">
+                    <span class="product-badge">خصم 17%</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي 1000 ملجم">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                        </div>
                     </div>
-                    <h3 class="product-title">جهاز قياس ضغط الدم الرقمي بشاشة كبيرة من إيزي كير</h3>
-                    <div class="rating-stars">★★★★★</div>
-                    <div class="product-price-row">
-                        <span class="price">$14.40</span>
+                    <div class="product-info">
+                        <span class="product-category">مكملات غذائية</span>
+                        <a href="product.html" class="product-name">فيتامين سي 1000 ملجم مع الروز هيبس</a>
+                        <div class="product-price">
+                            <span class="current-price">450 ج.م</span>
+                            <span class="old-price">550 ج.م</span>
+                        </div>
                     </div>
-                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
+
+                <!-- Product 2 -->
                 <div class="product-card reveal">
-                    <span class="product-badge sale">-13%</span>
-                    <div class="product-image-wrap">
-                        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/24-300x300.jpg"
-                            alt="لوشن أطفال">
+                    <span class="product-badge">الأكثر مبيعاً</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="أوميجا 3">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                        </div>
                     </div>
-                    <h3 class="product-title">لوشن جسم للأطفال من هيمالايا 400 مل عبوة من 2</h3>
-                    <div class="rating-stars">★★★★★</div>
-                    <div class="product-price-row">
-                        <span class="price">$25.00</span>
-                        <span class="old-price">$28.60</span>
+                    <div class="product-info">
+                        <span class="product-category">مكملات غذائية</span>
+                        <a href="product.html" class="product-name">أوميجا 3 زيت السمك 1000 ملجم</a>
+                        <div class="product-price">
+                            <span class="current-price">450 ج.م</span>
+                            <span class="old-price">550 ج.م</span>
+                        </div>
                     </div>
-                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
+
+                <!-- Product 3 -->
                 <div class="product-card reveal">
-                    <span class="product-badge sale">-9%</span>
-                    <div class="product-image-wrap">
-                        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/11-300x300.jpg"
-                            alt="معقم اليدين">
+                    <span class="product-badge">جديد</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="فيتامين د3">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                        </div>
                     </div>
-                    <h3 class="product-title">جل معقم اليدين المنعش المتطور من بيوريل</h3>
-                    <div class="rating-stars">★★★★★</div>
-                    <div class="product-price-row">
-                        <span class="price">$8.50</span>
+                    <div class="product-info">
+                        <span class="product-category">فيتامينات</span>
+                        <a href="product.html" class="product-name">فيتامين د3 5000 وحدة دولية</a>
+                        <div class="product-price">
+                            <span class="current-price">380 ج.م</span>
+                            <span class="old-price">480 ج.م</span>
+                        </div>
                     </div>
-                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
+
+                <!-- Product 4 -->
                 <div class="product-card reveal">
-                    <span class="product-badge sale">-12%</span>
-                    <div class="product-image-wrap">
-                        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/01-300x300.jpg"
-                            alt="مقياس التأكسج النبضي">
+                    <span class="product-badge">خصم 12%</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="ميلاتونين">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                        </div>
                     </div>
-                    <h3 class="product-title">مقياس التأكسج النبضي الرقمي بشاشة OLED</h3>
-                    <div class="rating-stars">★★★★★</div>
-                    <div class="product-price-row">
-                        <span class="price">$12.00</span>
+                    <div class="product-info">
+                        <span class="product-category">مساعدات النوم</span>
+                        <a href="product.html" class="product-name">ميلاتونين 5 ملجم سريع الذوبان</a>
+                        <div class="product-price">
+                            <span class="current-price">320 ج.م</span>
+                            <span class="old-price">420 ج.م</span>
+                        </div>
                     </div>
-                    <a href="#" class="add-to-cart">أضف إلى السلة</a>
                 </div>
             </div>
         </div>
@@ -2752,68 +2683,81 @@
 
             <div id="serum" class="tab-content active">
                 <div class="products-grid">
-                    <!-- Product 1 -->
+                    <!-- Product 5 -->
                     <div class="product-card reveal">
-                        <span class="product-badge">-10%</span>
-                        <div class="product-image-wrap">
-                            <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/23.jpg"
-                                alt="منتج">
-
+                        <span class="product-badge">خصم 10%</span>
+                        <div class="product-image">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_11602631905.jpg" alt="مالتي فيتامين">
+                            <div class="product-actions">
+                                <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                            </div>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">حمض الأسكوربيك 8% + ألفا أربوتين 2% 30 مل</h3>
-                            <div class="rating-stars">★★★★★</div>
-                            <div class="product-price-row">
-                                <span class="old-price">$200</span>
-                                <span class="price">$180</span>
+                            <span class="product-category">فيتامينات</span>
+                            <a href="product.html" class="product-name">مالتي فيتامين يومي متكامل</a>
+                            <div class="product-price">
+                                <span class="current-price">250 ج.م</span>
+                                <span class="old-price">300 ج.م</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Product 2 -->
+                    <!-- Product 6 -->
                     <div class="product-card reveal">
-                        <span class="product-badge">-7%</span>
-                        <div class="product-image-wrap">
-                            <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/24.jpg"
-                                alt="منتج">
-
+                        <span class="product-badge">خصم 7%</span>
+                        <div class="product-image">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1748296181.jpeg" alt="بيوتين">
+                            <div class="product-actions">
+                                <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                            </div>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">سيروم مون فروت 1% بديل الباكوتشيول</h3>
-                            <div class="rating-stars">★★★★★</div>
-                            <div class="product-price-row">
-                                <span class="old-price">$300</span>
-                                <span class="price">$280</span>
+                            <span class="product-category">العناية بالشعر</span>
+                            <a href="product.html" class="product-name">بيوتين 10000 ميكروجرام</a>
+                            <div class="product-price">
+                                <span class="current-price">280 ج.م</span>
+                                <span class="old-price">350 ج.م</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Product 3 -->
+                    <!-- Product 1 (Repeated) -->
                     <div class="product-card reveal">
-                        <span class="product-badge">-20%</span>
-                        <div class="product-image-wrap">
-                            <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/18.jpg"
-                                alt="منتج">
-
+                        <span class="product-badge">خصم 20%</span>
+                        <div class="product-image">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي">
+                            <div class="product-actions">
+                                <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                            </div>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">زيت إم زي سكين المنعش والمضاد للأكسدة 30 مل</h3>
-                            <div class="rating-stars">★★★★★</div>
-                            <div class="product-price-row">
-                                <span class="old-price">$249</span>
-                                <span class="price">$199</span>
+                            <span class="product-category">مكملات غذائية</span>
+                            <a href="product.html" class="product-name">فيتامين سي 1000 ملجم</a>
+                            <div class="product-price">
+                                <span class="current-price">440 ج.م</span>
+                                <span class="old-price">550 ج.م</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Product 4 -->
+                    <!-- Product 2 (Repeated) -->
                     <div class="product-card reveal">
-                        <div class="product-image-wrap">
-                            <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/21.jpg"
-                                alt="منتج">
+                        <div class="product-image">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="أوميجا 3">
+                            <div class="product-actions">
+                                <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="#" class="action-btn"><i class="fa-solid fa-eye"></i></a>
+                            </div>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-title">علاج جود جينز بحمض الجليكوليك 30 مل</h3>
-                            <div class="rating-stars">★★★★★</div>
-                            <div class="product-price-row">
-                                <span class="price">$60 – $75</span>
+                            <span class="product-category">مكملات غذائية</span>
+                            <a href="product.html" class="product-name">أوميجا 3 زيت السمك</a>
+                            <div class="product-price">
+                                <span class="current-price">450 ج.م</span>
                             </div>
                         </div>
                     </div>
@@ -2833,11 +2777,7 @@
             <div class="modern-dual-banners">
                 <!-- Left Banner -->
                 <a href="#" class="modern-banner banner-pink reveal">
-                    <div class="modern-banner-content">
-                        <h2>عيون تتحدث<br>آيلاينر مثالي</h2>
-                        <p>غذي بشرتك، واحتفلي بجمالك</p>
-                        <span class="shop-now">تسوق الآن</span>
-                    </div>
+                   
                     <div class="modern-banner-image">
                         <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner03.jpg"
                             alt="آيلاينر">
@@ -2846,11 +2786,7 @@
 
                 <!-- Right Banner -->
                 <a href="#" class="modern-banner banner-beige reveal">
-                    <div class="modern-banner-content">
-                        <h2>لوني عالمك<br>بأناقة</h2>
-                        <p>كل حركة، وكل لحظة تميزك</p>
-                        <span class="shop-now">تسوق الآن</span>
-                    </div>
+                   
                     <div class="modern-banner-image">
                         <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner04.jpg"
                             alt="مستحضرات تجميل">
@@ -2869,74 +2805,86 @@
             </div>
             <div class="deals-grid">
                 <!-- Deal 1 -->
-                <div class="deal-card reveal">
-                    <div class="deal-image">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/22.jpg"
-                            alt="ماسك الشفاه لانيج">
-                    </div>
-                    <div class="deal-content">
-                        <h3 class="product-title">ماسك الشفاه لانيج الليلي 20 جم</h3>
-                        <div class="rating-stars">★★★★★</div>
-                        <div class="product-price-row">
-                            <span class="old-price">$299</span>
-                            <span class="price">$249</span>
+                <div class="product-card reveal">
+                    <span class="product-badge">خصم 20%</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="حمض الأسكوربيك">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="product.html" class="action-btn"><i class="fa-solid fa-eye"></i></a>
                         </div>
-
-                        <a href="#" class="add-to-cart-link">أضف إلى السلة</a>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">العناية بالبشرة</span>
+                        <a href="product.html" class="product-name">حمض الأسكوربيك 8% + ألفا أربوتين 2%</a>
+                        <div class="product-price">
+                            <span class="current-price">180 ج.م</span>
+                            <span class="old-price">200 ج.م</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Deal 2 -->
-                <div class="deal-card reveal">
-                    <div class="deal-image">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/14.jpg"
-                            alt="كريم فيتامين سي">
-                    </div>
-                    <div class="deal-content">
-                        <h3 class="product-title">كريم فيتامين سي سي إي أو لتفتيح البشرة</h3>
-                        <div class="rating-stars">★★★★★</div>
-                        <div class="product-price-row">
-                            <span class="old-price">$199</span>
-                            <span class="price">$180</span>
+                <div class="product-card reveal">
+                    <span class="product-badge">خصم 15%</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="فيتامين سي">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="product.html" class="action-btn"><i class="fa-solid fa-eye"></i></a>
                         </div>
-
-                        <a href="#" class="add-to-cart-link">أضف إلى السلة</a>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">فيتامينات</span>
+                        <a href="product.html" class="product-name">كريم فيتامين سي لتفتيح البشرة</a>
+                        <div class="product-price">
+                            <span class="current-price">180 ج.م</span>
+                            <span class="old-price">199 ج.م</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Deal 3 -->
-                <div class="deal-card reveal">
-                    <div class="deal-image">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/23.jpg"
-                            alt="حمض الأسكوربيك">
-                    </div>
-                    <div class="deal-content">
-                        <h3 class="product-title">حمض الأسكوربيك 8% + ألفا أربوتين 2% 30 مل</h3>
-                        <div class="rating-stars">★★★★★</div>
-                        <div class="product-price-row">
-                            <span class="old-price">$200</span>
-                            <span class="price">$180</span>
+                <div class="product-card reveal">
+                    <span class="product-badge">عرض خاص</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="منتج العناية">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="product.html" class="action-btn"><i class="fa-solid fa-eye"></i></a>
                         </div>
-
-                        <a href="#" class="add-to-cart-link">أضف إلى السلة</a>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">الجمال</span>
+                        <a href="product.html" class="product-name">ماسك الشفاه الليلي للعناية المكثفة</a>
+                        <div class="product-price">
+                            <span class="current-price">249 ج.م</span>
+                            <span class="old-price">299 ج.م</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Deal 4 -->
-                <div class="deal-card reveal">
-                    <div class="deal-image">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/16.jpg"
-                            alt="ثنائي البشرة السحري">
-                    </div>
-                    <div class="deal-content">
-                        <h3 class="product-title">ثنائي البشرة السحري من شارلوت تلبوري</h3>
-                        <div class="rating-stars">★★★★★</div>
-                        <div class="product-price-row">
-                            <span class="old-price">$71</span>
-                            <span class="price">$69</span>
+                <div class="product-card reveal">
+                    <span class="product-badge">الأكثر مبيعاً</span>
+                    <div class="product-image">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="ثنائي البشرة">
+                        <div class="product-actions">
+                            <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
+                            <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="product.html" class="action-btn"><i class="fa-solid fa-eye"></i></a>
                         </div>
-
-                        <a href="#" class="add-to-cart-link">أضف إلى السلة</a>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">مجموعات الهدايا</span>
+                        <a href="product.html" class="product-name">ثنائي البشرة السحري للعناية المتكاملة</a>
+                        <div class="product-price">
+                            <span class="current-price">69 ج.م</span>
+                            <span class="old-price">71 ج.م</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2954,10 +2902,9 @@
                             alt="بيوريتانز برايد">
                     </a>
                     <div class="footer-contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 99 شارع النمط الجديد، الولايات المتحدة 12345،<br>بجانب
-                            نقطة الشمس.</p>
-                        <p><i class="fas fa-phone-alt"></i> +00 123-456-789</p>
-                        <p><i class="fas fa-envelope"></i> demo@example.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
+                        <p><i class="fas fa-phone-alt"></i> 01068777020 (متاح 24/7)</p>
+                        <p><i class="fas fa-envelope"></i> support@puritan.com.eg</p>
                     </div>
                 </div>
 
@@ -3039,10 +2986,14 @@
             <span class="close-menu" id="closeMenu">&times;</span>
         </div>
         <div class="mobile-search">
-            <input type="text" placeholder="البحث عن المنتجات...">
+            <form action="search.html">
+                <input type="text" name="q" placeholder="البحث عن المنتجات...">
+            </form>
         </div>
         <ul class="mobile-menu-links">
-            <li><a href="#">الرئيسية</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="search.html">المنتجات</a></li>
             <li>
                 <a href="#" class="has-badge">المتجر <span class="menu-badge badge-hot">ساخن</span></a>
                 <ul class="mobile-sub-menu">
@@ -3076,6 +3027,34 @@
             <li><a href="#">قائمة الأمنيات</a></li>
             <li><a href="#">اتصل بنا</a></li>
         </ul>
+    </div>
+
+    <!-- Sidebar Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div id="side-cart">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-body">
+            <div id="cart-items-container">
+                <!-- Cart items will be injected here -->
+                <div class="text-center py-10">
+                    <i class="fa-solid fa-cart-shopping text-4xl text-gray-200 mb-4"></i>
+                    <p class="text-gray-500">سلة المشتريات فارغة</p>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>المجموع:</span>
+                <span id="cart-total-amount">0 ج.م</span>
+            </div>
+            <div class="cart-actions">
+                <a href="#" class="checkout-btn">إتمام الطلب</a>
+                <a href="cart.html" class="view-cart-btn">عرض السلة</a>
+            </div>
+        </div>
     </div>
 
     <!-- Sales Notification -->
@@ -3136,6 +3115,221 @@
                         },
                     }
                 }).mount();
+            }
+        });
+</script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // SweetAlert Toast Configuration
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            showClass: {
+                popup: 'animate__animated animate__fadeInRight animate__faster'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutRight animate__faster'
+            },
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+        // Cart Logic
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartUI();
+
+        function toggleCart(show = true) {
+            const sideCart = document.getElementById('side-cart');
+            const cartOverlay = document.getElementById('cartOverlay');
+            if (!sideCart || !cartOverlay) return; // Prevent errors if elements not found
+
+            if (show) {
+                sideCart.classList.add('active');
+                cartOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                updateCartUI(); // Ensure UI is fresh when opening
+            } else {
+                sideCart.classList.remove('active');
+                cartOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.getElementById('closeCart')?.addEventListener('click', () => toggleCart(false));
+        document.getElementById('cartOverlay')?.addEventListener('click', () => toggleCart(false));
+
+        function addToCart(product) {
+            const existingItem = cart.find(item => item.name === product.name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            saveCart();
+            updateCartUI();
+            toggleCart(true);
+        }
+
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const totalAmount = document.getElementById('cart-total-amount');
+            const cartCount = document.querySelector('.cart-count');
+
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-10">
+                        <i class="fa-solid fa-cart-shopping text-4xl text-gray-200 mb-4"></i>
+                        <p class="text-gray-500">سلة المشتريات فارغة</p>
+                    </div>
+                `;
+                totalAmount.innerText = '0 ج.م';
+                if (cartCount) cartCount.innerText = '0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            let count = 0;
+
+            cart.forEach((item, index) => {
+                const priceNum = parseInt(item.price.replace(/[^\d]/g, ''));
+                total += priceNum * item.quantity;
+                count += item.quantity;
+
+                html += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <span class="cart-item-title">${item.name}</span>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="cart-item-price">${item.price}</span>
+                                <div class="flex items-center gap-2">
+                                    <button onclick="updateQuantity(${index}, -1)" class="w-6 h-6 rounded-full border flex items-center justify-center">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button onclick="updateQuantity(${index}, 1)" class="w-6 h-6 rounded-full border flex items-center justify-center">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            totalAmount.innerText = `${total} ج.م`;
+            if (cartCount) cartCount.innerText = count;
+        }
+
+        window.updateQuantity = function(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            saveCart();
+            updateCartUI();
+        };
+
+        window.removeFromCart = function(index) {
+            cart.splice(index, 1);
+            saveCart();
+            updateCartUI();
+        };
+
+        // SweetAlert Actions
+        // Re-defining addToCart to use the object structure
+        const originalAddToCart = addToCart;
+
+        function addToWishlist(productName = "المنتج") {
+            Toast.fire({
+                icon: 'info',
+                title: 'تمت الإضافة للمفضلة!',
+                text: `تم إضافة ${productName} إلى قائمة أمنياتك`
+            });
+        }
+
+        // Newsletter Subscription
+        document.querySelector('.newsletter-box form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            if (email) {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'شكراً لاشتراكك!',
+                    text: 'ستصلك أحدث العروض والمقالات قريباً'
+                });
+                this.reset();
+            }
+        });
+
+        // Search Form
+        document.querySelectorAll('.search-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const query = this.querySelector('input').value;
+                if (query) {
+                    Toast.fire({
+                        icon: 'info',
+                        title: 'البحث',
+                        text: `جاري البحث عن: ${query}...`,
+                        timer: 1500
+                    });
+                }
+            });
+        });
+
+        // Global click handler for products and actions
+        document.addEventListener('click', function(e) {
+            // Handle Cart Click
+            const cartBtn = e.target.closest('.header-cart');
+            if (cartBtn) {
+                e.preventDefault();
+                toggleCart(true);
+                return;
+            }
+
+            // Handle Add to Cart
+            const addToCartBtn = e.target.closest('.action-btn');
+            const isCartAction = addToCartBtn && addToCartBtn.querySelector('.fa-cart-shopping');
+            
+            if (isCartAction) {
+                e.preventDefault();
+                e.stopPropagation();
+                const card = addToCartBtn.closest('.product-card') || addToCartBtn.closest('.deal-card');
+                const title = card?.querySelector('.product-name')?.innerText || "المنتج";
+                const price = card?.querySelector('.current-price')?.innerText || "0 ج.م";
+                const image = card?.querySelector('img')?.src || "";
+                
+                addToCart({
+                    name: title,
+                    price: price,
+                    image: image
+                });
+                return;
+            }
+
+            // Handle Product Card Click
+            const productCard = e.target.closest('.product-card') || e.target.closest('.deal-card');
+            if (productCard) {
+                // If it's a link or button inside the card, let it handle itself
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+                    return;
+                }
+                window.location.href = 'product.html';
             }
         });
 

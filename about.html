@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | بيوريتان</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2b57a2;
+            --secondary: #33a58e;
+            --dark: #0f0f0f;
+            --gray: #6b7280;
+            --light-gray: #f8f9fb;
+            --white: #ffffff;
+            --accent: #ff69b4;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 95%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #004785;
+            color: var(--white);
+            padding: 12px 0;
+            font-size: 13px;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            direction: rtl;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .auth-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .auth-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .auth-links a:hover {
+            color: #98c628;
+        }
+
+        .lang-switcher {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 15px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #98c628;
+            transform: translateY(-2px);
+        }
+
+        .top-contact {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-contact span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Header */
+        .main-header {
+            padding: 15px 0;
+            background: #004785; /* Unified color */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            direction: rtl;
+            flex-direction: row-reverse !important;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 75px; /* Slightly larger logo */
+            width: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 700px;
+        }
+
+        .search-form {
+            display: flex;
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .search-form input {
+            flex: 1;
+            border: none;
+            padding: 12px 25px;
+            background: transparent;
+            outline: none;
+            font-size: 15px;
+            text-align: right;
+            color: #333;
+        }
+
+        .search-form button {
+            background: #98c628;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-form button:hover {
+            background: #86b023;
+        }
+
+        .header-contact-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: white; /* Text white for blue background */
+        }
+
+        .header-contact-box .label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2px;
+        }
+
+        .header-contact-box .number {
+            font-weight: 700;
+            font-size: 18px;
+            color: white;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: #004785; /* Unified color */
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            direction: rtl;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-icon-item {
+            position: relative;
+            font-size: 24px;
+            color: var(--white);
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+        }
+
+        .nav-icon-item:hover {
+            color: #98c628;
+        }
+
+        .nav-icon-item .badge {
+            position: absolute;
+            top: 2px;
+            right: -2px;
+            background: #98c628;
+            color: #004785;
+            font-size: 11px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border: 2px solid #004785;
+        }
+
+        .main-menu {
+            display: flex;
+            gap: 35px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .main-menu li a {
+            color: var(--white);
+            transition: 0.3s;
+            padding: 18px 0;
+            display: block;
+        }
+
+        .main-menu li a:hover {
+            color: #98c628;
+        }
+
+        .categories-dropdown {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 15px 25px;
+            width: 250px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            position: relative;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .categories-dropdown:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .categories-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 250px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            padding: 10px 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            text-align: right;
+        }
+
+        .categories-dropdown:hover .categories-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .categories-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .categories-menu li a:hover {
+            background: #f8f9fb;
+            color: #004785;
+            padding-right: 25px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 1100px) {
+            .main-menu {
+                gap: 20px;
+                margin-left: 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .top-bar-left {
+                display: none;
+            }
+
+            .top-bar .container {
+                justify-content: center;
+            }
+
+            .header-contact-box {
+                display: none;
+            }
+
+            .nav-bar {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-header .container {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .main-header {
+                padding: 15px 0;
+            }
+
+            .search-bar {
+                order: 3;
+                width: 100%;
+                max-width: 100%;
+                flex: none;
+            }
+
+            .main-header .container {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .header-cart {
+                padding: 10px 15px;
+            }
+
+            .cart-text {
+                display: none;
+            }
+
+            .header-right {
+                gap: 15px;
+            }
+        }
+
+        /* Mobile Menu Drawer Styles */
+        .mobile-menu-drawer {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: var(--white);
+            z-index: 2000;
+            transition: 0.4s;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .mobile-menu-drawer.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.171);
+            z-index: 1999;
+            display: none;
+            backdrop-filter: blur(1px);
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-menu-header .logo img {
+            height: 35px;
+        }
+
+        .close-menu {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-menu-links a {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .mobile-sub-menu {
+            list-style: none;
+            background: #fcfcfc;
+            padding-right: 15px;
+            margin-bottom: 10px;
+            border-right: 2px solid var(--light-gray);
+        }
+
+        .mobile-sub-menu li a {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 0;
+            border-bottom: none;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-links .has-badge {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-new {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .badge-hot {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .badge-sale {
+            background: #f0fdf4;
+            color: #15803d;
+        }
+
+        .mobile-search {
+            margin-bottom: 30px;
+        }
+
+        .mobile-search input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+        }
+
+        /* About Page Content */
+        .about-hero {
+            background: linear-gradient(rgba(43, 87, 162, 0.05), rgba(43, 87, 162, 0.02));
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .about-hero p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .about-text p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .values-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .value-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Modern Footer Styles */
+        .modern-footer {
+            background-color: #000;
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: block;
+            color: #fff;
+        }
+
+        .footer-contact-info p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .newsletter-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .newsletter-box input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background: #fff;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .newsletter-box button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .payment-methods img {
+            height: 25px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        /* --- New Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="auth-links">
+                    <a href="#">دخول</a> / <a href="#">تسجيل جديد</a>
+                </div>
+                <div class="lang-switcher">
+                    <span>اللغة: عربي</span> <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="top-contact">
+                    <span>Healthtomuscles@gmail.com <i class="fa fa-envelope"></i></span>
+                    <span>01068777020 <i class="fa fa-phone"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-right">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header-contact-box">
+                    <span class="label">خدمه العملاء</span>
+                    <span class="number">01068777020</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <form action="search.html" class="search-form">
+                    <input type="text" placeholder="انت بتدور على ايه ؟" name="q">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png"
+                        alt="بيوريتانز برايد">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="categories-dropdown">
+                <span><i class="fa fa-bars"></i> &nbsp; جميع الأقسام</span>
+                <span><i class="fa fa-chevron-down" style="font-size: 10px;"></i></span>
+                <ul class="categories-menu">
+                    <li><a href="#">الرعاية الصحية</a></li>
+                    <li><a href="#">العناية الشخصية</a></li>
+                    <li><a href="#">العناية بالبشرة</a></li>
+                    <li><a href="#">العناية بالطفل</a></li>
+                    <li><a href="#">التغذية</a></li>
+                    <li><a href="#">المستلزمات الطبية</a></li>
+                    <li><a href="#">الجمال والعطور</a></li>
+                </ul>
+            </div>
+            <ul class="main-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html" class="active">من نحن</a></li>
+                <li><a href="search.html">المنتجات</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#">المدونة</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero --> 
+    <section class="about-hero reveal">
+        <div class="container">
+            <h1>من نحن</h1>
+            <p>نحن في بيوريتان نؤمن بأن الجمال الحقيقي والصحة المستدامة يبدآن من الداخل، من خلال العناية الواعية والجودة الفائقة.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section reveal">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://puritanspride.com.eg/slider/larg/news_1748519965.png" alt="عن بيوريتان">
+                </div>
+                <div class="about-text">
+                    <h2>قصتنا ورؤيتنا</h2>
+                    <p>منذ انطلاقتنا، وضعت بيوريتان نصب أعينها هدفاً واحداً: أن تكون الشريك الموثوق لكل من يسعى لحياة أكثر صحة وجمالاً. نحن لا نقدم مجرد منتجات، بل نقدم تجربة متكاملة تجمع بين نقاء الطبيعة ودقة العلم الحديث.</p>
+                    <p>نحن نفتخر باختيارنا لأفضل الماركات العالمية والمكونات الأكثر فعالية، لنضمن لعملائنا نتائج ملموسة تعزز من ثقتهم بأنفسهم وتدعم نمط حياتهم الصحي.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>10K+</h3>
+                            <p>عميل سعيد</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>منتج متميز</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>عام من الخبرة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section reveal">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 32px; color: var(--dark); margin-bottom: 50px;">قيمنا الجوهرية</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>الجودة الفائقة</h3>
+                    <p>نلتزم بأعلى معايير الجودة العالمية في اختيار وتخزين وتوصيل منتجاتنا، لنضمن وصولها إليك في أفضل حالاتها.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>الشفافية والثقة</h3>
+                    <p>نؤمن بالصراحة مع عملائنا حول مكونات وفوائد منتجاتنا، لنبني علاقة ثقة تدوم طويلاً.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>الابتكار المستمر</h3>
+                    <p>نبحث دائماً عن أحدث ما توصلت إليه أبحاث الصحة والجمال لنوفر لك حلولاً عصرية وفعالة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Col 1 -->
+                <div class="footer-col reveal">
+                    <a href="#" class="footer-logo">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png"
+                            alt="بيوريتانز برايد">
+                    </a>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
+                        <p><i class="fas fa-phone-alt"></i> 01068777020 (متاح 24/7)</p>
+                        <p><i class="fas fa-envelope"></i> support@puritan.com.eg</p>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col reveal">
+                    <h3>تعرف علينا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الشروط والسياسة</a></li>
+                        <li><a href="#">الوظائف</a></li>
+                        <li><a href="#">الأخبار والمدونة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col reveal">
+                    <h3>معلومات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">التعليقات</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">دليل المقاسات</a></li>
+                        <li><a href="#">المدفوعات</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col reveal">
+                    <h3>الطلبات والمرتجعات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">تتبع الطلب</a></li>
+                        <li><a href="#">التوصيل</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">المرتجعات</a></li>
+                        <li><a href="#">الاستبدال</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5 -->
+                <div class="footer-col reveal">
+                    <h3>ابقَ على تواصل</h3>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <p class="footer-copyright">© 2026 بيوريتان - متجر تجارة إلكترونية. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="payment-methods">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png"
+                            alt="المدفوعات">
+                    </div>
+                    <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-drawer" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+            </a>
+            <span class="close-menu" id="closeMenu">&times;</span>
+        </div>
+        <div class="mobile-search">
+            <form action="search.html">
+                <input type="text" name="q" placeholder="البحث عن المنتجات...">
+            </form>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="search.html">المنتجات</a></li>
+            <li>
+                <a href="#" class="has-badge">المتجر <span class="menu-badge badge-hot">ساخن</span></a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">وصل حديثاً</a></li>
+                    <li><a href="#">الأكثر مبيعاً</a></li>
+                    <li><a href="#">منتجات مميزة</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">العناية بالبشرة</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">مكافحة الشيخوخة</a></li>
+                    <li><a href="#">غسول الوجه</a></li>
+                    <li><a href="#">مرطب</a></li>
+                    <li><a href="#">مجموعة العناية بالبشرة</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">العناية الشخصية</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">منتجات التنظيف</a></li>
+                    <li><a href="#">العناية النسائية</a></li>
+                    <li><a href="#">العناية بالشعر</a></li>
+                    <li><a href="#">العناية بالفم</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="has-badge">الجمال <span class="menu-badge badge-new">جديد</span></a></li>
+            <li><a href="#" class="has-badge">عروض يومية <span class="menu-badge badge-sale">تخفيض</span></a></li>
+            <li><a href="#">العناية بالطفل</a></li>
+            <li><a href="#">حسابي</a></li>
+            <li><a href="#">قائمة الأمنيات</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Sidebar Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div id="side-cart">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-body">
+            <div id="cart-items-container">
+                <!-- Items will be injected here -->
+                <div class="text-center py-10">
+                    <i class="fa-solid fa-cart-shopping text-4xl text-gray-200 mb-4"></i>
+                    <p class="text-gray-500">سلة المشتريات فارغة</p>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>المجموع:</span>
+                <span id="cart-total-amount">0 ج.م</span>
+            </div>
+            <div class="cart-actions">
+                <a href="#" class="checkout-btn">إتمام الطلب</a>
+                <a href="cart.html" class="view-cart-btn">عرض السلة</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // SweetAlert Toast Configuration
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end', 
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            showClass: {
+                popup: 'animate__animated animate__fadeInRight animate__faster'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutRight animate__faster'
+            },
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+        // Newsletter Subscription
+        document.querySelector('.newsletter-box button')?.addEventListener('click', function(e) {
+            const input = this.parentElement.querySelector('input');
+            if (input && input.value) {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'شكراً لاشتراكك!',
+                    text: 'ستصلك أحدث العروض والمقالات قريباً'
+                });
+                input.value = '';
+            }
+        });
+
+        // Search Form
+        document.querySelectorAll('.search-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const query = this.querySelector('input').value;
+                if (query) {
+                    Toast.fire({
+                        icon: 'info',
+                        title: 'البحث',
+                        text: `جاري البحث عن: ${query}...`,
+                        timer: 1500
+                    });
+                }
+            });
+        });
+
+        // Cart Logic
+         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+         updateCartUI();
+ 
+         function toggleCart(show = true) {
+             const sideCart = document.getElementById('side-cart');
+             const cartOverlay = document.getElementById('cartOverlay');
+             if (!sideCart || !cartOverlay) return;
+ 
+             if (show) {
+                 sideCart.classList.add('active');
+                 cartOverlay.classList.add('active');
+                 document.body.style.overflow = 'hidden';
+                 updateCartUI();
+             } else {
+                 sideCart.classList.remove('active');
+                 cartOverlay.classList.remove('active');
+                 document.body.style.overflow = '';
+             }
+         }
+ 
+         document.getElementById('closeCart')?.addEventListener('click', () => toggleCart(false));
+         document.getElementById('cartOverlay')?.addEventListener('click', () => toggleCart(false));
+ 
+         function saveCart() {
+             localStorage.setItem('cart', JSON.stringify(cart));
+         }
+ 
+         function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const totalAmount = document.getElementById('cart-total-amount');
+            const cartCount = document.querySelector('.cart-count');
+
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-10">
+                        <i class="fa-solid fa-cart-shopping text-4xl text-gray-200 mb-4"></i>
+                        <p class="text-gray-500">سلة المشتريات فارغة</p>
+                    </div>
+                `;
+                totalAmount.innerText = '0 ج.م';
+                if (cartCount) cartCount.innerText = '0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            let count = 0;
+
+            cart.forEach((item, index) => {
+                const priceNum = parseInt(item.price.replace(/[^\d]/g, ''));
+                total += priceNum * item.quantity;
+                count += item.quantity;
+
+                html += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <span class="cart-item-title">${item.name}</span>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="cart-item-price">${item.price}</span>
+                                <div class="flex items-center gap-2">
+                                    <button onclick="updateQuantity(${index}, -1)" class="w-6 h-6 rounded-full border flex items-center justify-center">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button onclick="updateQuantity(${index}, 1)" class="w-6 h-6 rounded-full border flex items-center justify-center">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            totalAmount.innerText = `${total} ج.م`;
+            if (cartCount) cartCount.innerText = count;
+        }
+
+        window.updateQuantity = function(index, change) {
+             cart[index].quantity += change;
+             if (cart[index].quantity <= 0) {
+                 cart.splice(index, 1);
+             }
+             saveCart();
+             updateCartUI();
+         };
+ 
+         window.removeFromCart = function(index) {
+             cart.splice(index, 1);
+             saveCart();
+             updateCartUI();
+         };
+
+        // Global click handler for actions
+        document.addEventListener('click', function(e) {
+            // Handle Cart Click
+            const cartBtn = e.target.closest('.header-cart');
+            if (cartBtn) {
+                e.preventDefault();
+                toggleCart(true);
+                return;
+            }
+        });
+
+        // Elements
+        const hamburger = document.getElementById('hamburger');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function toggleMenu() {
+            if (mobileMenu && menuOverlay) {
+                mobileMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        if (hamburger) hamburger.addEventListener('click', toggleMenu);
+        if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+
+        // Back to Top Logic
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTop");
+            if (btn) {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    btn.classList.add("show");
+                } else {
+                    btn.classList.remove("show");
+                }
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll Reveal Animation with Intersection Observer
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
