@@ -154,7 +154,7 @@ function saveCart() {
 function updateCartUI() {
     const container = document.getElementById('cart-items-container');
     const totalAmount = document.getElementById('cart-total-amount');
-    const cartCount = document.querySelector('.cart-count');
+    const cartCounts = document.querySelectorAll('.cart-count');
 
     if (!container) return;
 
@@ -166,7 +166,7 @@ function updateCartUI() {
             </div>
         `;
         if (totalAmount) totalAmount.innerText = '0 ج.م';
-        if (cartCount) cartCount.innerText = '0';
+        cartCounts.forEach(el => el.innerText = '0');
         return;
     }
 
@@ -202,7 +202,7 @@ function updateCartUI() {
 
     container.innerHTML = html;
     if (totalAmount) totalAmount.innerText = `${total} ج.م`;
-    if (cartCount) cartCount.innerText = count;
+    cartCounts.forEach(el => el.innerText = count);
 }
 
 window.updateQuantity = function(index, change) {
