@@ -372,12 +372,12 @@ img {
 
 /* Top Bar */
 .top-bar {
-    background: #004785;
-    color: var(--white);
+    background: #ffffff;
+    color: var(--dark);
     padding: 12px 0px 0px 0px;
     font-size: 13px;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .top-bar .container {
@@ -682,9 +682,9 @@ img {
 
 /* Header */
 .main-header {
-    background: #004785;
+    background: #ffffff;
     /* Unified color */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Hamburger Menu */
@@ -701,7 +701,7 @@ img {
     display: block;
     width: 25px;
     height: 3px;
-    background: #fff;
+    background: #000000;
     border-radius: 3px;
     transition: 0.3s;
 }
@@ -804,13 +804,13 @@ img {
 
 /* Navigation */
 .nav-bar {
-    background: #004785;
+    background: #ffffff;
     /* Unified color */
-    color: var(--white);
+    color: var(--dark);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(255, 254, 254, 0.15);
 }
 
 .nav-bar .container {
@@ -818,6 +818,8 @@ img {
     align-items: center;
     justify-content: space-between;
     direction: rtl;
+    background-color: #0000000c;
+    /* box-shadow: 1px 1px 5px rgb(0, 0, 0); */
 }
 
 .nav-icons {
@@ -832,7 +834,7 @@ img {
 .nav-icon-item {
     position: relative;
     font-size: 24px;
-    color: var(--white);
+    color: var(--dark);
     cursor: pointer;
     transition: 0.3s;
     display: flex;
@@ -872,7 +874,7 @@ img {
 }
 
 .main-menu li a {
-    color: var(--white);
+    color: var(--dark);
     transition: 0.3s;
     padding: 18px 0;
     display: block;
@@ -883,8 +885,8 @@ img {
 }
 
 .categories-dropdown {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0);
     padding: 15px 25px;
     width: 250px;
     font-weight: 700;
@@ -991,7 +993,7 @@ img {
         display: block;
         width: 25px;
         height: 3px;
-        background: #fff;
+        background: #000000;
         border-radius: 3px;
         transition: 0.3s;
     }
@@ -1034,7 +1036,7 @@ img {
         width: 40px;
         height: 40px;
         font-size: 20px;
-        color: #fff;
+        color: #000000;
     }
     
     .mobile-header-icons .nav-icon-item .badge {
