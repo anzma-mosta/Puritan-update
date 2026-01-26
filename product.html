@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حمض الأسكوربيك 8% + ألفا أربوتين 2% 30 مل - بيوريتان</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="./styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
   
 </head>
 
@@ -61,7 +62,7 @@
             </div>
             <div class="header-left">
                 <a href="index.html" class="logo">
-                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" fetchpriority="high" width="200" height="60">
                 </a>
             </div>
             <div class="mobile-header-icons">
@@ -139,17 +140,17 @@
                 <!-- Gallery -->
                 <div class="product-gallery">
                     <div class="main-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="حمض الأسكوربيك" id="mainImg">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="حمض الأسكوربيك" id="mainImg" fetchpriority="high" loading="eager" width="500" height="500">
                     </div>
                     <div class="thumbnail-list">
                         <div class="thumb-item active" data-src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg">
-                            <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="مصغر 1">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="مصغر 1" loading="lazy" width="80" height="80">
                         </div>
                         <div class="thumb-item" data-src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg">
-                            <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="مصغر 2">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="مصغر 2" loading="lazy" width="80" height="80">
                         </div>
                         <div class="thumb-item" data-src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg">
-                            <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="مصغر 3">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="مصغر 3" loading="lazy" width="80" height="80">
                         </div>
                     </div>
                 </div>
@@ -279,7 +280,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">خصم 10%</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -299,7 +300,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">جديد</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="سيروم النضارة">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="سيروم النضارة" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -319,7 +320,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">الأكثر مبيعاً</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="أوميجا 3">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="أوميجا 3" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -339,7 +340,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">خصم 15%</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="مغنيسيوم">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="مغنيسيوم" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -366,7 +367,7 @@
                 <!-- Col 1 -->
                 <div class="footer-col reveal">
                     <a href="#" class="footer-logo">
-                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
                     </a>
                     <div class="footer-contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
@@ -434,7 +435,7 @@
                 </div>
                 <div class="footer-bottom-right">
                     <div class="payment-methods">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات" loading="lazy" width="200" height="30">
                     </div>
                     <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
                 </div>
@@ -447,7 +448,7 @@
     <div class="mobile-menu-drawer" id="mobileMenu">
         <div class="mobile-menu-header">
             <a href="#" class="logo">
-                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
             </a>
             <span class="close-menu" id="closeMenu">&times;</span>
         </div>
@@ -529,8 +530,8 @@
     </button>
 
     <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="./script.js" defer></script>
 </body>
 
 </html>

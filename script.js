@@ -21,8 +21,8 @@ function initSearchPage() {
     }
 }
 
-// Initialize Sliders with a small delay to ensure layout is ready
-window.addEventListener('load', function() {
+// Initialize Sliders as soon as DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
     updateAuthState(); // Update UI based on login status
     initSearchPage(); // Handle search query display
     

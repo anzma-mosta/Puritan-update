@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بيوريتان | اتمام عملية الشراء</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 </head>
 
 <body>
@@ -65,7 +66,7 @@
             </div>
             <div class="header-left">
                 <a href="index.html" class="logo">
-                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" fetchpriority="high" width="200" height="60">
                 </a>
             </div>
             <div class="mobile-header-icons">
@@ -263,7 +264,7 @@
                 <!-- Col 1 -->
                 <div class="footer-col reveal">
                     <a href="#" class="footer-logo">
-                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
                     </a>
                     <div class="footer-contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
@@ -331,7 +332,7 @@
                 </div>
                 <div class="footer-bottom-right">
                     <div class="payment-methods">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات" loading="lazy" width="200" height="30">
                     </div>
                     <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
                 </div>
@@ -343,8 +344,8 @@
     <div class="mobile-menu-overlay" id="menuOverlay"></div>
     <div class="mobile-menu-drawer" id="mobileMenu">
         <div class="mobile-menu-header">
-            <a href="#" class="logo">
-                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+            <a href="index.html" class="logo">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
             </a>
             <span class="close-menu" id="closeMenu">&times;</span>
         </div>
@@ -423,7 +424,7 @@
     <!-- Sales Notification -->
     <div class="sales-notification" id="sales-notify">
         <span class="sales-close" onclick="closeNotify()">&times;</span>
-        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/22-100x100.jpg" alt="منتج" class="sales-img">
+        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/22-100x100.jpg" alt="منتج" class="sales-img" loading="lazy" width="60" height="60">
         <div class="sales-content">
             <b>شخص ما في القاهرة اشترى</b>
             <small style="display: block; color: var(--gray); margin-top: 5px;">منذ 35 دقيقة</small>
@@ -432,10 +433,10 @@
 
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
     <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="./script.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const shipToDifferentAddressCheckbox = document.getElementById('shipToDifferentAddress');

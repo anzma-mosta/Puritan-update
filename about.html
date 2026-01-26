@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن | بيوريتان</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <style>
         /* About Page Content */
 
@@ -373,7 +374,7 @@
             </div>
             <div class="header-left">
                 <a href="index.html" class="logo">
-                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" fetchpriority="high" width="200" height="60">
                 </a>
             </div>
             <div class="mobile-header-icons">
@@ -444,8 +445,8 @@
     <section class="about-section reveal">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image">
-                    <img src="https://puritanspride.com.eg/slider/larg/news_1748519965.png" alt="عن بيوريتان">
+                <div class="about-image reveal">
+                    <img src="https://puritanspride.com.eg/slider/larg/news_1748519965.png" alt="عن بيوريتان" loading="lazy" width="600" height="400">
                 </div>
                 <div class="about-text">
                     <h2>قصتنا ورؤيتنا</h2>
@@ -502,7 +503,7 @@
                 <!-- Col 1 -->
                 <div class="footer-col reveal">
                     <a href="#" class="footer-logo">
-                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
                     </a>
                     <div class="footer-contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
@@ -570,7 +571,7 @@
                 </div>
                 <div class="footer-bottom-right">
                     <div class="payment-methods">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات" loading="lazy" width="200" height="30">
                     </div>
                     <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
                 </div>
@@ -583,7 +584,7 @@
     <div class="mobile-menu-drawer" id="mobileMenu">
         <div class="mobile-menu-header">
             <a href="#" class="logo">
-                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
             </a>
             <span class="close-menu" id="closeMenu">&times;</span>
         </div>
@@ -665,8 +666,8 @@
     </div>
 
     <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="./script.js" defer></script>
 </body>
 
 </html>

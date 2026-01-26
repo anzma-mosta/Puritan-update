@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بيوريتان | منتجات الصحة والجمال الفاخرة</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
 
 </head>
@@ -67,7 +68,7 @@
             </div>
             <div class="header-left">
                 <a href="index.html" class="logo">
-                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" fetchpriority="high" width="200" height="60">
                 </a>
             </div>
             <div class="mobile-header-icons">
@@ -135,16 +136,16 @@
                         <div class="splide__track">
                             <ul class="splide__list">
                                 <li class="splide__slide">
-                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748519965.png" alt="بانر هيرو 1" style="width:100%; height:100%; object-fit:cover;">
+                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748519965.png" alt="بانر هيرو 1" style="width:100%; height:100%; object-fit:cover;" fetchpriority="high" loading="eager" width="800" height="400">
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748951536.jpg" alt="بانر هيرو 2" style="width:100%; height:100%; object-fit:cover;">
+                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748951536.jpg" alt="بانر هيرو 2" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="800" height="400">
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748519899.png" alt="بانر هيرو 3" style="width:100%; height:100%; object-fit:cover;">
+                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748519899.png" alt="بانر هيرو 3" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="800" height="400">
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748951473.jpg" alt="بانر هيرو 4" style="width:100%; height:100%; object-fit:cover;">
+                                    <img src="https://puritanspride.com.eg/slider/larg/news_1748951473.jpg" alt="بانر هيرو 4" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="800" height="400">
                                 </li>
                             </ul>
                         </div>
@@ -152,11 +153,11 @@
                 </div>
                 <div class="hero-side-banners reveal">
                     <a href="#" class="side-banner reveal" style="flex: 2;">
-                        <img src="https://puritanspride.com.eg/listshow/larg/img_ar11_1640851950.jpeg" alt="بانر جانبي 1">
+                        <img src="https://puritanspride.com.eg/listshow/larg/img_ar11_1640851950.jpeg" alt="بانر جانبي 1" loading="lazy" width="400" height="200">
 
                     </a>
                     <a href="#" class="side-banner reveal">
-                        <img src="https://puritanspride.com.eg/listshow/larg/img_ar12_1748520150.png" alt="بانر جانبي 2">
+                        <img src="https://puritanspride.com.eg/listshow/larg/img_ar12_1748520150.png" alt="بانر جانبي 2" loading="lazy" width="400" height="200">
 
                     </a>
                 </div>
@@ -215,7 +216,7 @@
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-foundation">
                                 <div class="category-image-wrap">
-                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat04.jpg" alt="كريم أساس">
+                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat04.jpg" alt="كريم أساس" loading="lazy" width="150" height="150">
                                 </div>
                                 <span class="category-name">كريم أساس</span>
                             </a>
@@ -223,7 +224,7 @@
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-concealer">
                                 <div class="category-image-wrap">
-                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat05.jpg" alt="خافي عيوب">
+                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat05.jpg" alt="خافي عيوب" loading="lazy" width="150" height="150">
                                 </div>
                                 <span class="category-name">خافي عيوب</span>
                             </a>
@@ -231,7 +232,7 @@
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-serum">
                                 <div class="category-image-wrap">
-                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat03.jpg" alt="سيروم">
+                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat03.jpg" alt="سيروم" loading="lazy" width="150" height="150">
                                 </div>
                                 <span class="category-name">سيروم</span>
                             </a>
@@ -239,7 +240,7 @@
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-moisturiser">
                                 <div class="category-image-wrap">
-                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat02.jpg" alt="مرطب">
+                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat02.jpg" alt="مرطب" loading="lazy" width="150" height="150">
                                 </div>
                                 <span class="category-name">مرطب</span>
                             </a>
@@ -247,7 +248,7 @@
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-creams">
                                 <div class="category-image-wrap">
-                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat01.jpg" alt="كريمات">
+                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat01.jpg" alt="كريمات" loading="lazy" width="150" height="150">
                                 </div>
                                 <span class="category-name">كريمات</span>
                             </a>
@@ -255,7 +256,7 @@
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-vitamin-c">
                                 <div class="category-image-wrap">
-                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat06.jpg" alt="فيتامين سي">
+                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat06.jpg" alt="فيتامين سي" loading="lazy" width="150" height="150">
                                 </div>
                                 <span class="category-name">فيتامين سي</span>
                             </a>
@@ -263,7 +264,7 @@
                         <li class="splide__slide">
                             <a href="#" class="category-item cat-sunscreens">
                                 <div class="category-image-wrap">
-                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat07.jpg" alt="واقي شمس">
+                                    <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cat07.jpg" alt="واقي شمس" loading="lazy" width="150" height="150">
                                 </div>
                                 <span class="category-name">واقي شمس</span>
                             </a>
@@ -286,7 +287,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">خصم 17%</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي 1000 ملجم">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي 1000 ملجم" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -307,7 +308,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">الأكثر مبيعاً</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="أوميجا 3">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="أوميجا 3" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -328,7 +329,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">جديد</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="فيتامين د3">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="فيتامين د3" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -349,7 +350,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">خصم 12%</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="ميلاتونين">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="ميلاتونين" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -392,7 +393,7 @@
                     <div class="product-card reveal">
                         <span class="product-badge">خصم 10%</span>
                         <div class="product-image">
-                            <img src="https://www.puritanspride.com.eg/product/larg/product_11602631905.jpg" alt="مالتي فيتامين">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_11602631905.jpg" alt="مالتي فيتامين" loading="lazy" width="300" height="300">
                             <div class="product-actions">
                                 <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                                 <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -412,7 +413,7 @@
                     <div class="product-card reveal">
                         <span class="product-badge">خصم 7%</span>
                         <div class="product-image">
-                            <img src="https://www.puritanspride.com.eg/product/larg/product_1748296181.jpeg" alt="بيوتين">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1748296181.jpeg" alt="بيوتين" loading="lazy" width="300" height="300">
                             <div class="product-actions">
                                 <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                                 <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -432,7 +433,7 @@
                     <div class="product-card reveal">
                         <span class="product-badge">خصم 20%</span>
                         <div class="product-image">
-                            <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="فيتامين سي" loading="lazy" width="300" height="300">
                             <div class="product-actions">
                                 <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                                 <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -451,7 +452,7 @@
                     <!-- Product 2 (Repeated) -->
                     <div class="product-card reveal">
                         <div class="product-image">
-                            <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="أوميجا 3">
+                            <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="أوميجا 3" loading="lazy" width="300" height="300">
                             <div class="product-actions">
                                 <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                                 <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -484,7 +485,7 @@
                 <a href="#" class="modern-banner banner-pink reveal">
 
                     <div class="modern-banner-image">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner03.jpg" alt="آيلاينر">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner03.jpg" alt="آيلاينر" loading="lazy" width="600" height="300">
                     </div>
                 </a>
 
@@ -492,7 +493,7 @@
                 <a href="#" class="modern-banner banner-beige reveal">
 
                     <div class="modern-banner-image">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner04.jpg" alt="مستحضرات تجميل">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/cms-banner04.jpg" alt="مستحضرات تجميل" loading="lazy" width="600" height="300">
                     </div>
                 </a>
             </div>
@@ -511,7 +512,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">خصم 20%</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="حمض الأسكوربيك">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1689023438.jpg" alt="حمض الأسكوربيك" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -532,7 +533,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">خصم 15%</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="فيتامين سي">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1710625018.jpeg" alt="فيتامين سي" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -553,7 +554,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">عرض خاص</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="منتج العناية">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1735642927.jpg" alt="منتج العناية" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -574,7 +575,7 @@
                 <div class="product-card reveal">
                     <span class="product-badge">الأكثر مبيعاً</span>
                     <div class="product-image">
-                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="ثنائي البشرة">
+                        <img src="https://www.puritanspride.com.eg/product/larg/product_1748296061.jpeg" alt="ثنائي البشرة" loading="lazy" width="300" height="300">
                         <div class="product-actions">
                             <a href="#" class="action-btn"><i class="fa-regular fa-heart"></i></a>
                             <a href="#" class="action-btn"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -601,7 +602,7 @@
                 <!-- Col 1 -->
                 <div class="footer-col reveal">
                     <a href="#" class="footer-logo">
-                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
                     </a>
                     <div class="footer-contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
@@ -669,7 +670,7 @@
                 </div>
                 <div class="footer-bottom-right">
                     <div class="payment-methods">
-                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات" loading="lazy" width="200" height="30">
                     </div>
                     <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
                 </div>
@@ -682,7 +683,7 @@
     <div class="mobile-menu-drawer" id="mobileMenu">
         <div class="mobile-menu-header">
             <a href="#" class="logo">
-                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد" loading="lazy" width="200" height="60">
             </a>
             <span class="close-menu" id="closeMenu">&times;</span>
         </div>
@@ -761,7 +762,7 @@
     <!-- Sales Notification -->
     <div class="sales-notification" id="sales-notify">
         <span class="sales-close" onclick="closeNotify()">&times;</span>
-        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/22-100x100.jpg" alt="منتج" class="sales-img">
+        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/22-100x100.jpg" alt="منتج" class="sales-img" loading="lazy" width="60" height="60">
         <div class="sales-content">
             <b>شخص ما في القاهرة اشترى</b>
             <!-- <span>لايف إيزي بروتين السكري - إدارة السكر</span> -->
@@ -771,10 +772,10 @@
 
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
     
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
     <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="./script.js" defer></script>
 </body>
 
 </html>
