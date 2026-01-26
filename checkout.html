@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيوريتان | اتمام عملية الشراء</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="user-account-link">
+                    <a href="account.html">أهلاً، طه حسين <i class="fa fa-chevron-down"></i></a>
+                </div>
+                <div class="lang-switcher">
+                    <span>اللغة: عربي</span> <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="top-contact">
+                    <span>Healthtomuscles@gmail.com <i class="fa fa-envelope"></i></span>
+                    <span>01068777020 <i class="fa fa-phone"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-right">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header-contact-box">
+                    <span class="label">خدمه العملاء</span>
+                    <span class="number">01068777020</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <form action="search.html" class="search-form">
+                    <input type="text" placeholder="انت بتدور على ايه ؟" name="q">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                </a>
+            </div>
+            <div class="mobile-header-icons">
+                <a href="account.html" class="nav-icon-item">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="#" class="nav-icon-item header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="categories-dropdown">
+                <span><i class="fa fa-bars"></i> &nbsp; جميع الأقسام</span>
+                <span><i class="fa fa-chevron-down" style="font-size: 10px;"></i></span>
+                <ul class="categories-menu">
+                    <li><a href="#">الرعاية الصحية</a></li>
+                    <li><a href="#">العناية الشخصية</a></li>
+                    <li><a href="#">العناية بالبشرة</a></li>
+                    <li><a href="#">العناية بالطفل</a></li>
+                    <li><a href="#">التغذية</a></li>
+                    <li><a href="#">المستلزمات الطبية</a></li>
+                    <li><a href="#">الجمال والعطور</a></li>
+                </ul>
+            </div>
+            <ul class="main-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="search.html">المنتجات</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#">المدونة</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="nav-icon-item">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-content-grid">
+                <!-- Right Side: Shipping -->
+                <div class="shipping-container">
+                    <h2 class="checkout-box-title">الشحن</h2>
+                    <div class="checkout-box">
+                      
+
+                        <div class="address-selection">
+                            <div class="ship-to-different">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="shipToDifferentAddress">
+                                    <span>الشحن لعنوان اخر؟</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Different Address Form (Hidden by default) -->
+                        <div id="differentAddressForm" class="different-address-form" style="display: none;">
+                            <h3 class="form-sub-title">عنوان اخر</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>اسم المستخدم *</label>
+                                    <input type="text" placeholder="اسم المستخدم" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>رقم الهاتف *</label>
+                                    <input type="tel" placeholder="رقم الهاتف" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>البلد *</label>
+                                <select required>
+                                    <option value="">اختر البلد</option>
+                                    <option value="EG">مصر</option>
+                                    <option value="SA">السعودية</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>المدينة *</label>
+                                <select required>
+                                    <option value="">اختر المدينة</option>
+                                    <option>القاهرة</option>
+                                    <option>الجيزة</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>اسم الشارع *</label>
+                                <input type="text" placeholder="اسم الشارع" required>
+                            </div>
+                            <div class="form-group">
+                                <label>علامة مميزة</label>
+                                <input type="text" placeholder="علامة مميزة">
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الشقه / الجناح / الوحده (اختياري)</label>
+                                <input type="text" placeholder="رقم الشقه / الجناح / الوحده">
+                            </div>
+                            <div class="form-group">
+                                <label>الرقم البريدي / ZIP</label>
+                                <input type="text" placeholder="الرقم البريدي / ZIP">
+                            </div>
+                        </div>
+
+                        <div class="order-notes">
+                            <label>ملاحظات الطلب (اختياري)</label>
+                            <textarea placeholder="ملاحظات حول طلبك، مثل ملاحظات خاصة للتسليم."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left Side: Order -->
+                <div class="order-summary-container">
+                    <h2 class="checkout-box-title">الطلب</h2>
+                    <div class="checkout-box">
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th>المنتج</th>
+                                    <th>الإجمالي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Super Biotin 5000 mcg 60 ... × 4</td>
+                                    <td>3600.0 جنيه مصري</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>القيمة المضافة</span>
+                                <span>0.0 جنيه مصري</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>الشحن</span>
+                                <span></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>الإجمالي</span>
+                                <span>3600.0 جنيه مصري</span>
+                            </div>
+                        </div>
+
+                        <div class="final-total">
+                            <span>الإجمالي النهائى</span>
+                            <span class="total-amount">3600.0 جنيه مصري</span>
+                        </div>
+
+                        <div class="payment-methods">
+                            <label class="payment-option active">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <span class="radio-custom"></span>
+                                <span class="payment-text">الدفع عند الاستلام</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="online">
+                                <span class="radio-custom"></span>
+                                <span class="payment-text">دفع أونلاين (كاشير)</span>
+                            </label>
+                        </div>
+
+                        <button class="confirm-order-btn">تأكيد الطلب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Col 1 -->
+                <div class="footer-col reveal">
+                    <a href="#" class="footer-logo">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    </a>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
+                        <p><i class="fas fa-phone-alt"></i> 01068777020 (متاح 24/7)</p>
+                        <p><i class="fas fa-envelope"></i> support@puritan.com.eg</p>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col reveal">
+                    <h3>تعرف علينا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الشروط والسياسة</a></li>
+                        <li><a href="#">الوظائف</a></li>
+                        <li><a href="#">الأخبار والمدونة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col reveal">
+                    <h3>معلومات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">التعليقات</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">دليل المقاسات</a></li>
+                        <li><a href="#">المدفوعات</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col reveal">
+                    <h3>الطلبات والمرتجعات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">تتبع الطلب</a></li>
+                        <li><a href="#">التوصيل</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">المرتجعات</a></li>
+                        <li><a href="#">الاستبدال</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5 -->
+                <div class="footer-col reveal">
+                    <h3>ابقَ على تواصل</h3>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <p class="footer-copyright">© 2026 بيوريتان - متجر تجارة إلكترونية. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="payment-methods">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات">
+                    </div>
+                    <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-drawer" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+            </a>
+            <span class="close-menu" id="closeMenu">&times;</span>
+        </div>
+        <div class="mobile-search">
+            <form action="search.html">
+                <input type="text" name="q" placeholder="البحث عن المنتجات...">
+            </form>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="search.html">المنتجات</a></li>
+            <li>
+                <a href="#" class="has-badge">المتجر <span class="menu-badge badge-hot">ساخن</span></a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">وصل حديثاً</a></li>
+                    <li><a href="#">الأكثر مبيعاً</a></li>
+                    <li><a href="#">منتجات مميزة</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">العناية بالبشرة</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">مكافحة الشيخوخة</a></li>
+                    <li><a href="#">غسول الوجه</a></li>
+                    <li><a href="#">مرطب</a></li>
+                    <li><a href="#">مجموعة العناية بالبشرة</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">العناية الشخصية</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">منتجات التنظيف</a></li>
+                    <li><a href="#">العناية النسائية</a></li>
+                    <li><a href="#">العناية بالشعر</a></li>
+                    <li><a href="#">العناية بالفم</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="has-badge">الجمال <span class="menu-badge badge-new">جديد</span></a></li>
+            <li><a href="#" class="has-badge">عروض يومية <span class="menu-badge badge-sale">تخفيض</span></a></li>
+            <li><a href="#">العناية بالطفل</a></li>
+            <li><a href="#">حسابي</a></li>
+            <li><a href="#">قائمة الأمنيات</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div id="side-cart">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-body">
+            <div id="cart-items-container">
+                <!-- Cart items will be injected here -->
+                <div class="cart-empty">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <p>سلة المشتريات فارغة</p>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>المجموع:</span>
+                <span id="cart-total-amount">0 ج.م</span>
+            </div>
+            <div class="cart-actions">
+                <a href="checkout.html" class="checkout-btn">إتمام الطلب</a>
+                <a href="cart.html" class="view-cart-btn">عرض السلة</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sales Notification -->
+    <div class="sales-notification" id="sales-notify">
+        <span class="sales-close" onclick="closeNotify()">&times;</span>
+        <img src="https://wordpressthemes.live/WCG10/WCM230_healthmart/medicine04/wp-content/uploads/2023/10/22-100x100.jpg" alt="منتج" class="sales-img">
+        <div class="sales-content">
+            <b>شخص ما في القاهرة اشترى</b>
+            <small style="display: block; color: var(--gray); margin-top: 5px;">منذ 35 دقيقة</small>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const shipToDifferentAddressCheckbox = document.getElementById('shipToDifferentAddress');
+            const differentAddressForm = document.getElementById('differentAddressForm');
+            const orderItemsTableBody = document.querySelector('.order-table tbody');
+            const subtotalSpan = document.querySelector('.summary-details .summary-row:nth-child(1) span:last-child');
+            const shippingSpan = document.querySelector('.summary-details .summary-row:nth-child(2) span:last-child');
+            const finalTotalSpan = document.querySelector('.final-total .total-amount');
+            const confirmOrderBtn = document.querySelector('.confirm-order-btn');
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Toggle different address form
+            if (shipToDifferentAddressCheckbox) {
+                shipToDifferentAddressCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        differentAddressForm.style.display = 'block';
+                    } else {
+                        differentAddressForm.style.display = 'none';
+                    }
+                });
+            }
+
+            // Clear error styling on input
+            document.addEventListener('input', (e) => {
+                if (e.target.hasAttribute('required')) {
+                    e.target.classList.remove('error');
+                }
+            });
+            document.addEventListener('change', (e) => {
+                if (e.target.tagName === 'SELECT' && e.target.hasAttribute('required')) {
+                    e.target.classList.remove('error');
+                }
+            });
+
+            function renderOrderSummary() {
+                orderItemsTableBody.innerHTML = ''; // Clear existing items
+                let subtotal = 0;
+
+                if (cart.length === 0) {
+                    orderItemsTableBody.innerHTML = '<tr><td colspan="2">لا توجد منتجات في سلة التسوق.</td></tr>';
+                    subtotalSpan.textContent = '0.00 جنيه مصري';
+                    shippingSpan.textContent = '0.00 جنيه مصري';
+                    finalTotalSpan.textContent = '0.00 جنيه مصري';
+                    confirmOrderBtn.disabled = true;
+                    return;
+                }
+
+                cart.forEach(item => {
+                    const itemPrice = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
+                    const itemTotal = itemPrice * item.quantity;
+                    subtotal += itemTotal;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.name} × ${item.quantity}</td>
+                        <td>${itemTotal.toFixed(2)} جنيه مصري</td>
+                    `;
+                    orderItemsTableBody.appendChild(row);
+                });
+
+                const shippingCost = 50; // Example shipping cost
+                const total = subtotal + shippingCost;
+
+                subtotalSpan.textContent = `${subtotal.toFixed(2)} جنيه مصري`;
+                shippingSpan.textContent = `${shippingCost.toFixed(2)} جنيه مصري`;
+                finalTotalSpan.textContent = `${total.toFixed(2)} جنيه مصري`;
+                confirmOrderBtn.disabled = false;
+            }
+
+            confirmOrderBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Get all required inputs from the main billing form
+                const billingInputs = document.querySelectorAll('.billing-details-form [required]');
+                let differentAddressInputs = [];
+                
+                // If ship to different address is checked, get those required inputs too
+                if (shipToDifferentAddressCheckbox && shipToDifferentAddressCheckbox.checked) {
+                    differentAddressInputs = document.querySelectorAll('#differentAddressForm [required]');
+                }
+                
+                const allRequiredInputs = [...billingInputs, ...differentAddressInputs];
+                let allFieldsFilled = true;
+                let firstErrorField = null;
+
+                allRequiredInputs.forEach(input => {
+                    if (!input.value || (input.tagName === 'SELECT' && input.value === "")) {
+                        allFieldsFilled = false;
+                        input.classList.add('error');
+                        if (!firstErrorField) firstErrorField = input;
+                    } else {
+                        input.classList.remove('error');
+                    }
+                });
+
+                if (allFieldsFilled) {
+                    Swal.fire({
+                        title: 'تم تأكيد الطلب!',
+                        text: 'شكراً لك. سيتم توصيل طلبك قريباً.',
+                        icon: 'success',
+                        confirmButtonText: 'حسناً',
+                        confirmButtonColor: '#004785'
+                    }).then(() => {
+                        localStorage.removeItem('cart'); // Clear cart
+                        window.location.href = 'index.html'; // Redirect to home
+                    });
+                } else {
+                    if (firstErrorField) {
+                        firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstErrorField.focus();
+                    }
+                    
+                    Swal.fire({
+                        title: 'بيانات ناقصة',
+                        text: 'الرجاء ملء جميع الحقول المطلوبة (المؤشرة بعلامة *) بشكل صحيح.',
+                        icon: 'warning',
+                        confirmButtonText: 'حسناً',
+                        confirmButtonColor: '#004785'
+                    });
+                }
+            });
+
+            renderOrderSummary();
+        });
+    </script>
+</body>
+
+</html>

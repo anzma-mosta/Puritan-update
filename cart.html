@@ -5,296 +5,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سلة المشتريات | بيوريتان</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --primary: #004785;
-            --secondary: #98c628;
-            --text-dark: #333;
-            --text-gray: #666;
-            --bg-light: #f9f9f9;
-            --border: #eee;
-        }
 
-        body {
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            background-color: #fff;
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-        }
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        .cart-page-header {
-            background: var(--primary);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .cart-page-header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .cart-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 80px;
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 40px;
-        }
-
-        @media (max-width: 992px) {
-            .cart-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .cart-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .cart-table th {
-            text-align: right;
-            padding: 15px;
-            border-bottom: 2px solid var(--border);
-            color: var(--text-gray);
-            font-weight: 600;
-        }
-
-        .cart-table td {
-            padding: 20px 15px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: middle;
-        }
-
-        .cart-item-detail {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .cart-item-detail img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .cart-item-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .cart-item-price {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .qty-control {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border: 1px solid var(--border);
-            padding: 5px 15px;
-            border-radius: 30px;
-            width: fit-content;
-        }
-
-        .qty-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            transition: 0.3s;
-        }
-
-        .qty-btn:hover {
-            color: var(--primary);
-        }
-
-        .remove-btn {
-            color: #ff4d4d;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        .remove-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .cart-summary {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: 15px;
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-        }
-
-        .summary-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .summary-total {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid var(--border);
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--primary);
-        }
-
-        .checkout-btn-large {
-            display: block;
-            width: 100%;
-            background: var(--secondary);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 30px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .checkout-btn-large:hover {
-            background: #86b023;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(152, 198, 40, 0.3);
-        }
-
-        .empty-cart-msg {
-            text-align: center;
-            padding: 100px 0;
-        }
-
-        .empty-cart-msg i {
-            font-size: 5rem;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-
-        .continue-shopping {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--primary);
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        .breadcrumb {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        /* Header Re-use Styles */
-        .main-header {
-            background: var(--primary);
-            padding: 15px 0;
-        }
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .logo img {
-            height: 60px;
-        }
-        .back-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="user-account-link">
+                    <a href="account.html">أهلاً، طه حسين <i class="fa fa-chevron-down"></i></a>
+                </div>
+                <div class="lang-switcher">
+                    <span>اللغة: عربي</span> <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="top-contact">
+                    <span>Healthtomuscles@gmail.com <i class="fa fa-envelope"></i></span>
+                    <span>01068777020 <i class="fa fa-phone"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="https://www.puritanspride.com.eg/assets/images/logo.png" alt="بيوريتان">
-            </a>
-            <a href="index.html" class="back-link">
-                <span>العودة للتسوق</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
+            <div class="header-right">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header-contact-box">
+                    <span class="label">خدمه العملاء</span>
+                    <span class="number">01068777020</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <form action="search.html" class="search-form">
+                    <input type="text" placeholder="انت بتدور على ايه ؟" name="q">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="mobile-header-icons">
+                <a href="account.html" class="nav-icon-item">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="cart.html" class="nav-icon-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                </a>
+            </div>
         </div>
     </header>
 
-    <div class="breadcrumb">
-        <a href="index.html">الرئيسية</a> / <span>سلة المشتريات</span>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="categories-dropdown">
+                <span><i class="fa fa-bars"></i> &nbsp; جميع الأقسام</span>
+                <span><i class="fa fa-chevron-down" style="font-size: 10px;"></i></span>
+                <ul class="categories-menu">
+                    <li><a href="#">الرعاية الصحية</a></li>
+                    <li><a href="#">العناية الشخصية</a></li>
+                    <li><a href="#">العناية بالبشرة</a></li>
+                    <li><a href="#">العناية بالطفل</a></li>
+                    <li><a href="#">التغذية</a></li>
+                    <li><a href="#">المستلزمات الطبية</a></li>
+                    <li><a href="#">الجمال والعطور</a></li>
+                </ul>
+            </div>
+            <ul class="main-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="search.html">المنتجات</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#">المدونة</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="nav-icon-item">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">الرئيسية</a>
+            <i class="fa fa-chevron-left"></i>
+            <span>سلة المشتريات</span>
+        </div>
     </div>
 
-    <div class="cart-page-header">
+    <!-- <div class="cart-page-header">
         <h1>سلة المشتريات</h1>
-    </div>
+    </div> -->
 
     <main class="cart-container" id="cart-content">
         <!-- Content will be injected by JavaScript -->
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Col 1 -->
+                <div class="footer-col reveal">
+                    <a href="#" class="footer-logo">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    </a>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - مدينة نصر، شارع عباس العقاد</p>
+                        <p><i class="fas fa-phone-alt"></i> 01068777020 (متاح 24/7)</p>
+                        <p><i class="fas fa-envelope"></i> support@puritan.com.eg</p>
+                    </div>
+                </div>
 
-        function saveCart() {
+                <!-- Col 2 -->
+                <div class="footer-col reveal">
+                    <h3>تعرف علينا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الشروط والسياسة</a></li>
+                        <li><a href="#">الوظائف</a></li>
+                        <li><a href="#">الأخبار والمدونة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col reveal">
+                    <h3>معلومات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">التعليقات</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">دليل المقاسات</a></li>
+                        <li><a href="#">المدفوعات</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col reveal">
+                    <h3>الطلبات والمرتجعات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">تتبع الطلب</a></li>
+                        <li><a href="#">التوصيل</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">المرتجعات</a></li>
+                        <li><a href="#">الاستبدال</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5 -->
+                <div class="footer-col reveal">
+                    <h3>ابقَ على تواصل</h3>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <p class="footer-copyright">© 2026 بيوريتان - متجر تجارة إلكترونية. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="payment-methods">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات">
+                    </div>
+                    <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-drawer" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+            </a>
+            <span class="close-menu" id="closeMenu">&times;</span>
+        </div>
+        <div class="mobile-search">
+            <form action="search.html">
+                <input type="text" name="q" placeholder="البحث عن المنتجات...">
+            </form>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="search.html">المنتجات</a></li>
+            <li><a href="account.html">حسابي</a></li>
+            <li><a href="cart.html">سلة المشتريات</a></li>
+            <li><a href="#">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Side Cart (from index.html) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div id="side-cart">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-body">
+            <div id="cart-items-container">
+                <!-- Cart items will be injected here -->
+                <div class="cart-empty">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <p>سلة المشتريات فارغة</p>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>المجموع:</span>
+                <span id="cart-total-amount">0 ج.م</span>
+            </div>
+            <div class="cart-actions">
+                <a href="checkout.html" class="checkout-btn">إتمام الطلب</a>
+                <a href="cart.html" class="view-cart-btn">عرض السلة</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Page Logic -->
+    <script>
+        // Use the cart from script.js if available, or load from localStorage
+        if (typeof cart === 'undefined') {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        function saveCartLocal() {
             localStorage.setItem('cart', JSON.stringify(cart));
+            // Sync with side cart if updateCartUI exists
+            if (typeof updateCartUI === 'function') {
+                updateCartUI();
+            }
         }
 
         function updateCartPage() {
             const container = document.getElementById('cart-content');
-            
-            if (cart.length === 0) {
+
+            if (!cart || cart.length === 0) {
                 container.innerHTML = `
-                    <div class="empty-cart-msg" style="grid-column: 1 / -1;">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <h2>سلة المشتريات فارغة حالياً</h2>
-                        <p>يبدو أنك لم تضف أي منتجات بعد.</p>
-                        <a href="index.html" class="checkout-btn-large" style="max-width: 300px; margin: 30px auto;">ابدأ التسوق الآن</a>
+                    <div class="empty-cart-msg" style="grid-column: 1 / -1; text-align: center; padding: 100px 20px;">
+                        <i class="fa-solid fa-cart-shopping" style="font-size: 80px; color: #f0f0f0; margin-bottom: 30px; display: block;"></i>
+                        <h2 style="color: var(--primary); margin-bottom: 15px; font-weight: 700;">سلة المشتريات فارغة حالياً</h2>
+                        <p style="color: var(--text-gray); margin-bottom: 35px; font-size: 1.1rem;">يبدو أنك لم تضف أي منتجات إلى سلة مشترياتك بعد.</p>
+                        <a href="search.html" class="checkout-btn-large" style="max-width: 320px; margin: 0 auto; display: block; background: var(--primary);">ابدأ التسوق الآن</a>
                     </div>
                 `;
                 return;
@@ -318,7 +328,7 @@
             let total = 0;
 
             cart.forEach((item, index) => {
-                const priceNum = parseInt(item.price.replace(/[^\d]/g, ''));
+                const priceNum = parseInt(item.price.replace(/[^\d]/g, '')) || 0;
                 const subtotal = priceNum * item.quantity;
                 total += subtotal;
 
@@ -327,20 +337,20 @@
                         <td>
                             <div class="cart-item-detail">
                                 <img src="${item.image}" alt="${item.name}">
-                                <a href="#" class="cart-item-name">${item.name}</a>
+                                <a href="product.html" class="cart-item-name">${item.name}</a>
                             </div>
                         </td>
-                        <td><span class="cart-item-price">${item.price}</span></td>
-                        <td>
+                        <td data-label="السعر"><span class="cart-item-price">${item.price}</span></td>
+                        <td data-label="الكمية">
                             <div class="qty-control">
-                                <button onclick="changeQty(${index}, -1)" class="qty-btn">-</button>
-                                <span>${item.quantity}</span>
-                                <button onclick="changeQty(${index}, 1)" class="qty-btn">+</button>
+                                <button onclick="changeQty(${index}, -1)" class="qty-btn" title="تقليل الكمية"><i class="fas fa-minus" style="font-size: 12px;"></i></button>
+                                <span style="font-weight: 700; min-width: 25px; text-align: center;">${item.quantity}</span>
+                                <button onclick="changeQty(${index}, 1)" class="qty-btn" title="زيادة الكمية"><i class="fas fa-plus" style="font-size: 12px;"></i></button>
                             </div>
                         </td>
-                        <td><span class="cart-item-price">${subtotal} ج.م</span></td>
+                        <td data-label="المجموع"><span class="cart-item-price" style="color: var(--secondary);">${subtotal} ج.م</span></td>
                         <td>
-                            <button onclick="removeItem(${index})" class="remove-btn">
+                            <button onclick="removeItem(${index})" class="remove-btn" title="حذف المنتج">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
                         </td>
@@ -351,25 +361,32 @@
             itemsHtml += `
                         </tbody>
                     </table>
-                    <a href="index.html" class="continue-shopping">
-                        <i class="fas fa-arrow-right"></i> استكمال التسوق
-                    </a>
+                    <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center;">
+                        <a href="search.html" class="continue-shopping" style="color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-arrow-right"></i> العودة للتسوق
+                        </a>
+                    </div>
                 </div>
-                <aside class="cart-summary">
-                    <h2 class="summary-title">ملخص الطلب</h2>
+                <aside class="cart-summary" style="background: #fff; border: 1px solid var(--border); box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                    <h2 class="summary-title" style="color: var(--primary); border-bottom: 2px solid var(--bg-light);">ملخص الطلب</h2>
                     <div class="summary-row">
-                        <span>المجموع الفرعي:</span>
+                        <span>إجمالي المنتجات:</span>
+                        <span style="font-weight: 600;">${total} ج.م</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>تكلفة التوصيل:</span>
+                        <span style="color: var(--secondary); font-weight: 600;">مجاني</span>
+                    </div>
+                    <div class="summary-row summary-total" style="border-top: 1px dashed var(--border); margin-top: 20px; padding-top: 20px;">
+                        <span>الإجمالي النهائي:</span>
                         <span>${total} ج.م</span>
                     </div>
-                    <div class="summary-row">
-                        <span>الشحن:</span>
-                        <span>مجاني</span>
+                    <a href="checkout.html" class="checkout-btn-large" style="background: var(--secondary); margin-top: 40px;">إتمام عملية الشراء</a>
+                    
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center;">
+                        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 15px;">نقبل الدفع عبر:</p>
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="مدفوعاتنا" style="width: 100%; opacity: 0.7;">
                     </div>
-                    <div class="summary-row summary-total">
-                        <span>الإجمالي الكلي:</span>
-                        <span>${total} ج.م</span>
-                    </div>
-                    <button class="checkout-btn-large" onclick="checkout()">إتمام عملية الشراء</button>
                 </aside>
             `;
 
@@ -381,7 +398,7 @@
             if (cart[index].quantity <= 0) {
                 cart.splice(index, 1);
             }
-            saveCart();
+            saveCartLocal();
             updateCartPage();
         };
 
@@ -398,27 +415,31 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     cart.splice(index, 1);
-                    saveCart();
+                    saveCartLocal();
                     updateCartPage();
+                    Swal.fire({
+                        title: 'تم الحذف!',
+                        text: 'تم حذف المنتج من السلة بنجاح.',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
                 }
             });
         };
 
         window.checkout = function() {
-            Swal.fire({
-                icon: 'success',
-                title: 'تم استلام طلبك بنجاح!',
-                text: 'شكراً لتسوقك معنا، سيتواصل معك فريقنا قريباً لتأكيد الطلب.',
-                confirmButtonColor: '#004785',
-                confirmButtonText: 'العودة للرئيسية'
-            }).then(() => {
-                cart = [];
-                saveCart();
-                window.location.href = 'index.html';
-            });
+            window.location.href = 'checkout.html';
         };
 
-        document.addEventListener('DOMContentLoaded', updateCartPage);
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartPage();
+        });
     </script>
+    <script src="./scripts-cart.js"></script>
+
 </body>
+
 </html>
+

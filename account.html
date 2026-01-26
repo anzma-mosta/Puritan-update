@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسابي | بيوريتان</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="user-account-link">
+                    <a href="account.html">أهلاً، طه حسين <i class="fa fa-chevron-down"></i></a>
+                </div>
+                <div class="lang-switcher">
+                    <span>اللغة: عربي</span> <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="top-contact">
+                    <span>Healthtomuscles@gmail.com <i class="fa fa-envelope"></i></span>
+                    <span>01068777020 <i class="fa fa-phone"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-right">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header-contact-box">
+                    <span class="label">خدمه العملاء</span>
+                    <span class="number">01068777020</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <form action="search.html" class="search-form">
+                    <input type="text" placeholder="انت بتدور على ايه ؟" name="q">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                </a>
+            </div>
+            <div class="mobile-header-icons">
+                <a href="account.html" class="nav-icon-item">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="#" class="nav-icon-item header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="categories-dropdown">
+                <span><i class="fa fa-bars"></i> &nbsp; جميع الأقسام</span>
+                <span><i class="fa fa-chevron-down" style="font-size: 10px;"></i></span>
+                <ul class="categories-menu">
+                    <li><a href="#">الرعاية الصحية</a></li>
+                    <li><a href="#">العناية الشخصية</a></li>
+                    <li><a href="#">العناية بالبشرة</a></li>
+                    <li><a href="#">العناية بالطفل</a></li>
+                    <li><a href="#">التغذية</a></li>
+                    <li><a href="#">المستلزمات الطبية</a></li>
+                    <li><a href="#">الجمال والعطور</a></li>
+                </ul>
+            </div>
+            <ul class="main-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="search.html">المنتجات</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="#">المدونة</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="account.html" class="nav-icon-item active">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="nav-icon-item header-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">الرئيسية</a>
+            <i class="fa fa-chevron-left"></i>
+            <span>حسابي</span>
+        </div>
+    </div>
+
+    <!-- Account Section -->
+    <section class="account-page">
+        <div class="container">
+            <div class="account-grid">
+                <!-- Sidebar -->
+                <aside class="account-sidebar">
+                    <div class="sidebar-header">
+                        <h3>حسابي</h3>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="active" data-target="dashboard"><a href="javascript:void(0)"><i class="fa fa-th-large"></i> لوحة التحكم</a></li>
+                        <li data-target="edit-profile"><a href="javascript:void(0)"><i class="fa fa-user-edit"></i> تعديل الحساب</a></li>
+                        <li data-target="orders"><a href="javascript:void(0)"><i class="fa fa-shopping-bag"></i> طلباتي</a></li>
+                        <li data-target="addresses"><a href="javascript:void(0)"><i class="fa fa-map-marker-alt"></i> العناوين</a></li>
+                        <li data-target="change-password"><a href="javascript:void(0)"><i class="fa fa-lock"></i> تعديل كلمة المرور</a></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out-alt"></i> تسجيل خروج</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="account-content">
+                    <!-- Dashboard Section -->
+                    <div id="dashboard" class="account-section active">
+                        <div class="dashboard-grid">
+                            <!-- Profile Card -->
+                            <div class="profile-card reveal">
+                                <div class="profile-img">
+                                    <img src="https://ui-avatars.com/api/?name=Taha+Hussein&background=004785&color=fff&size=128" alt="Taha Hussein">
+                                </div>
+                                <div class="profile-info">
+                                    <h4>Taha Hussein</h4>
+                                    <p>capootaha17@gmail.com</p>
+                                    <button class="btn-edit-account" onclick="switchSection('edit-profile')">تعديل الحساب</button>
+                                </div>
+                            </div>
+
+                            <!-- Recent Orders Summary -->
+                            <div class="recent-orders reveal">
+                                <div class="card-header">
+                                    <h4>الطلبات الأخيرة</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="orders-table">
+                                        <thead>
+                                            <tr>
+                                                <th>الطلب</th>
+                                                <th>تاريخ الطلب</th>
+                                                <th>الحالة</th>
+                                                <th>الإجمالي</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4" class="empty-table">لا توجد طلبات سابقة حتى الآن.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edit Profile Section -->
+                    <div id="edit-profile" class="account-section">
+                        <div class="account-card reveal">
+                            <div class="card-header">
+                                <h4>تعديل الحساب</h4>
+                            </div>
+                            <form class="account-form custom-edit-form">
+                                <div class="profile-upload-container">
+                                    <label class="upload-label">الصورة الافتراضية للمستخدم</label>
+                                    <div class="upload-box" id="drop-area">
+                                        <input type="file" id="profile-image-input" hidden accept="image/*">
+                                        <div class="upload-content">
+                                            <i class="fa fa-cloud-upload-alt"></i>
+                                            <p>اسحب واسقط الملف هنا أو قم انقر</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-fields-container">
+                                    <div class="form-group">
+                                        <label>الاسم الاول</label>
+                                        <input type="text" value="Taha" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>الاسم الأخير</label>
+                                        <input type="text" value="Hussein" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>البريد الالكترونى</label>
+                                        <input type="email" value="capootaha17@gmail.com" required>
+                                    </div>
+                                    <div class="form-actions-left">
+                                        <button type="submit" class="btn-save-custom">حفظ</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div id="orders" class="account-section">
+                        <div class="account-card reveal">
+                            <div class="card-header">
+                                <h4>طلباتي</h4>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="orders-table">
+                                    <thead>
+                                        <tr>
+                                            <th>الطلب</th>
+                                            <th>التاريخ</th>
+                                            <th>الحالة</th>
+                                            <th>الإجمالي</th>
+                                            <th>الإجراءات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="5" class="empty-table">لم تقم بإجراء أي طلبات بعد.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addresses Section -->
+                    <div id="addresses" class="account-section">
+                        <div class="account-card reveal">
+                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4>عناوين الشحن</h4>
+                                <button class="btn-add-address">+ إضافة عنوان جديد</button>
+                            </div>
+                            <div class="address-grid">
+                                <div class="address-card">
+                                    <div class="address-header">
+                                        <span class="badge-default">افتراضي</span>
+                                        <div class="address-actions">
+                                            <a href="#"><i class="fa fa-edit"></i></a>
+                                            <a href="#"><i class="fa fa-trash-alt"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="address-body">
+                                        <p><strong>الاسم:</strong> Taha Hussein</p>
+                                        <p><strong>العنوان:</strong> شارع التحرير، الدقي، الجيزة</p>
+                                        <p><strong>الهاتف:</strong> 01068777020</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Change Password Section -->
+                    <div id="change-password" class="account-section">
+                        <div class="account-card reveal">
+                            <div class="card-header">
+                                <h4>تغيير كلمة المرور</h4>
+                            </div>
+                            <form class="account-form">
+                                <div class="form-group">
+                                    <label>كلمة المرور الحالية</label>
+                                    <input type="password" placeholder="********" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>كلمة المرور الجديدة</label>
+                                    <input type="password" placeholder="********" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>تأكيد كلمة المرور الجديدة</label>
+                                    <input type="password" placeholder="********" required>
+                                </div>
+                                <button type="submit" class="btn-submit">تحديث كلمة المرور</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col reveal">
+                    <a href="index.html" class="footer-logo">
+                        <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+                    </a>
+                    <p>بيوريتانز برايد هي علامة تجارية رائدة في مجال المكملات الغذائية والفيتامينات، نسعى دائماً لتقديم أفضل المنتجات لعملائنا.</p>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col reveal">
+                    <h3>تعرف علينا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الشروط والسياسة</a></li>
+                        <li><a href="#">الوظائف</a></li>
+                        <li><a href="#">الأخبار والمدونة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col reveal">
+                    <h3>معلومات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">التعليقات</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">دليل المقاسات</a></li>
+                        <li><a href="#">المدفوعات</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col reveal">
+                    <h3>الطلبات والمرتجعات</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">تتبع الطلب</a></li>
+                        <li><a href="#">التوصيل</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">المرتجعات</a></li>
+                        <li><a href="#">الاستبدال</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5 -->
+                <div class="footer-col reveal">
+                    <h3>ابقَ على تواصل</h3>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <p class="footer-copyright">© 2026 بيوريتان - متجر تجارة إلكترونية. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="payment-methods">
+                        <img src="https://wordpressthemes.live/WCG10/WCM231_cosmika/cosmetic06/wp-content/uploads/2025/04/pay.png" alt="المدفوعات">
+                    </div>
+                    <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-drawer" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">
+                <img src="https://www.puritanspride.com.eg/setting/store_img_1586269025.png" alt="بيوريتانز برايد">
+            </a>
+            <span class="close-menu" id="closeMenu">&times;</span>
+        </div>
+        <div class="mobile-search">
+            <form action="search.html">
+                <input type="text" name="q" placeholder="البحث عن المنتجات...">
+            </form>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="search.html">المنتجات</a></li>
+            <li>
+                <a href="#" class="has-badge">المتجر <span class="menu-badge badge-hot">ساخن</span></a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">وصل حديثاً</a></li>
+                    <li><a href="#">الأكثر مبيعاً</a></li>
+                    <li><a href="#">منتجات مميزة</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">العناية بالبشرة</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">مكافحة الشيخوخة</a></li>
+                    <li><a href="#">غسول الوجه</a></li>
+                    <li><a href="#">مرطب</a></li>
+                    <li><a href="#">مجموعة العناية بالبشرة</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">العناية الشخصية</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="#">منتجات التنظيف</a></li>
+                    <li><a href="#">العناية النسائية</a></li>
+                    <li><a href="#">العناية بالشعر</a></li>
+                    <li><a href="#">العناية بالفم</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="has-badge">الجمال <span class="menu-badge badge-new">جديد</span></a></li>
+            <li><a href="#" class="has-badge">عروض يومية <span class="menu-badge badge-sale">تخفيض</span></a></li>
+            <li><a href="#">العناية بالطفل</a></li>
+            <li><a href="account.html">حسابي</a></li>
+            <li><a href="#">قائمة الأمنيات</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Sidebar Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div id="side-cart">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-body">
+            <div id="cart-items-container">
+                <!-- Cart items will be injected here -->
+                <div class="cart-empty">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <p>سلة المشتريات فارغة</p>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>المجموع:</span>
+                <span id="cart-total-amount">0 ج.م</span>
+            </div>
+            <div class="cart-actions">
+                <a href="checkout.html" class="checkout-btn">إتمام الطلب</a>
+                <a href="cart.html" class="view-cart-btn">عرض السلة</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./script.js"></script>
+    <script>
+        function switchSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.account-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-menu li').forEach(li => {
+                li.classList.remove('active');
+                if (li.getAttribute('data-target') === sectionId) {
+                    li.classList.add('active');
+                }
+            });
+
+            // Scroll to top of content on mobile
+            if (window.innerWidth <= 992) {
+                document.querySelector('.account-content').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Add event listeners to sidebar items
+        document.querySelectorAll('.sidebar-menu li[data-target]').forEach(item => {
+            item.addEventListener('click', function() {
+                const target = this.getAttribute('data-target');
+                switchSection(target);
+            });
+        });
+
+        // Profile Image Upload Logic
+        const dropArea = document.getElementById('drop-area');
+        const fileInput = document.getElementById('profile-image-input');
+
+        if (dropArea && fileInput) {
+            dropArea.addEventListener('click', () => fileInput.click());
+
+            fileInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        dropArea.style.backgroundImage = `url(${e.target.result})`;
+                        dropArea.style.backgroundSize = 'cover';
+                        dropArea.style.backgroundPosition = 'center';
+                        dropArea.querySelector('.upload-content').style.display = 'none';
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+
+            // Drag and Drop
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, () => dropArea.classList.add('highlight'), false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, () => dropArea.classList.remove('highlight'), false);
+            });
+
+            dropArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                fileInput.files = files;
+                
+                if (files && files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        dropArea.style.backgroundImage = `url(${e.target.result})`;
+                        dropArea.style.backgroundSize = 'cover';
+                        dropArea.style.backgroundPosition = 'center';
+                        dropArea.querySelector('.upload-content').style.display = 'none';
+                    }
+                    reader.readAsDataURL(files[0]);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

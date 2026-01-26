@@ -105,26 +105,26 @@ const Toast = window.Swal ?
         }
     };
 
-// Cart Logic
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-updateCartUI();
+// // Cart Logic
+// let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// updateCartUI();
 
-window.toggleCart = function(show = true) {
-    const sideCart = document.getElementById('side-cart');
-    const cartOverlay = document.getElementById('cartOverlay');
-    if (!sideCart || !cartOverlay) return; // Prevent errors if elements not found
+// window.toggleCart = function(show = true) {
+//     const sideCart = document.getElementById('side-cart');
+//     const cartOverlay = document.getElementById('cartOverlay');
+//     if (!sideCart || !cartOverlay) return; // Prevent errors if elements not found
 
-    if (show) {
-        sideCart.classList.add('active');
-        cartOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        updateCartUI(); // Ensure UI is fresh when opening
-    } else {
-        sideCart.classList.remove('active');
-        cartOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
+//     if (show) {
+//         sideCart.classList.add('active');
+//         cartOverlay.classList.add('active');
+//         document.body.style.overflow = 'hidden';
+//         updateCartUI(); // Ensure UI is fresh when opening
+//     } else {
+//         sideCart.classList.remove('active');
+//         cartOverlay.classList.remove('active');
+//         document.body.style.overflow = '';
+//     }
+// }
 
 const closeCartBtn = document.getElementById('closeCart');
 const cartOverlayBtn = document.getElementById('cartOverlay');
