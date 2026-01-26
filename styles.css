@@ -374,7 +374,7 @@ img {
 .top-bar {
     background: #004785;
     color: var(--white);
-    padding: 12px 0;
+    padding: 12px 0px 0px 0px;
     font-size: 13px;
     font-weight: 500;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -682,7 +682,6 @@ img {
 
 /* Header */
 .main-header {
-    padding: 15px 0;
     background: #004785;
     /* Unified color */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
